@@ -1,7 +1,8 @@
 // import logoDesign from '../../assets/HRnet_logo-design.svg'
-// import IconBrand from '../Icons/IconBrand'
-// import icoList from '../../assets/ico-list.svg'
-// import icoAdd from '../../assets/ico-user-add.svg'
+// import IconBrand from '../../assets/HRnet_logo-brand.svg'
+import IconAdd from '../../components/Icons/IconAdd'
+import IconBrand from '../../components/Icons/IconBrand'
+// import IconList from '../../components/Icons/IconList'
 
 import { useLocation, Link } from 'react-router-dom'
 
@@ -13,23 +14,18 @@ function Navbar() {
     <>
       <nav>
         <div className="nav-item nav-brand">
-          <h1>Hrnet Employees</h1>
+          <h2>Hrnet Employees</h2>
           {path === '/' ? (
             <Link to="./Employees" className="nav-menu-choise">
-              <img
+              <IconBrand
                 className="nav-ico"
-                // src={icoList}
                 alt="Health Wealth logo brand name"
               />
               <span>Current</span>
             </Link>
           ) : (
             <Link to="/" className="nav-menu-choise">
-              <img
-                className="nav-logo-brand"
-                // src={icoBrand}
-                alt="Health Wealth logo brand name"
-              />
+              <IconAdd className="nav-ico" alt="Health Wealth logo Add user" />
               <span>Create</span>
             </Link>
           )}

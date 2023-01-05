@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import IconAdd from '../Icons/IconAdd'
 import './Form.scss'
 
 function Form() {
@@ -75,9 +76,8 @@ function Form() {
 
   return (
     <form action="" id="add-employee-form" onSubmit={handleSubmit}>
-      <img
+      <IconAdd
         className="add-employee-ico"
-        // src={iconAdd}
         alt="Health Wealth logo brand name"
       />
       <div className="input-wrapper">
