@@ -1,7 +1,7 @@
-// import logoBrand from '../../assets/HRnet_logo-brand.svg';
-// import icoList from '../../assets/ico-list.svg';
-// import icoAdd from '../../assets/ico-user-add.svg';
-// import logoDesign from '../../components/Icons/logoDesign';
+// import logoDesign from '../../assets/HRnet_logo-design.svg'
+// import IconBrand from '../Icons/IconBrand'
+// import icoList from '../../assets/ico-list.svg'
+// import icoAdd from '../../assets/ico-user-add.svg'
 
 import { useLocation, Link } from 'react-router-dom'
 
@@ -27,7 +27,7 @@ function Navbar() {
             <Link to="/" className="nav-menu-choise">
               <img
                 className="nav-logo-brand"
-                // src={logoBrand}
+                // src={icoBrand}
                 alt="Health Wealth logo brand name"
               />
               <span>Create</span>
