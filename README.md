@@ -1,4 +1,4 @@
-# WealthHealth - HRnet FR  
+# WealthHealth - HRnet 🇫🇷  
 
 <kbd>![Add an employee](./WealthHealth_1.png)</kbd>
 
@@ -69,7 +69,7 @@ URL de visualisation du rendu web : http://localhost:3000
 
 ___
 
-# WealthHealth - HRnet GB
+# WealthHealth - HRnet 🇬🇧
 
 ### Recommanded IDE
 

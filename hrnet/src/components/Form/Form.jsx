@@ -1,7 +1,43 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Form.scss'
 
 function Form() {
+  const initialState = {
+    firstName: '',
+    lastName: '',
+    dateOfBirth: '',
+    startDate: '',
+    street: '',
+    city: '',
+    state: '',
+    zipCode: '',
+    departement: '',
+  }
+
+  const [employee, setEmployee] = useState(initialState)
+
+  const handleChange = (e) => {
+    setEmployee({ ...employee, [e.target.id]: e.target.value })
+  }
+
+  // eslint-disable-next-line no-unused-vars
+  const handleSubmit = (e) => {
+    e.preventDefault()
+
+    // eslint-disable-next-line no-unused-vars
+    const newEmployee = {
+      firstName: employee.firstName,
+      lastName: employee.lastName,
+      dateOfBirth: employee.dateOfBirth,
+      startDate: employee.startDate,
+      street: employee.street,
+      city: employee.city,
+      state: employee.state,
+      zipCode: employee.zipCode,
+      departement: employee.departement,
+    }
+  }
+
   return (
     <form action="" id="add-employee-form">
       <img
@@ -15,7 +51,7 @@ function Form() {
           type="text"
           id="firstName"
           // value={firstName}
-          // onChange={handleChange}
+          onChange={handleChange}
           autoComplete="off"
         />
       </div>
@@ -25,7 +61,7 @@ function Form() {
           type="text"
           id="lastName"
           // value={lastName}
-          // onChange={handleChange}
+          onChange={handleChange}
           autoComplete="off"
         />
       </div>
@@ -39,7 +75,7 @@ function Form() {
           type="text"
           id="startDate"
           // value={startDate}
-          // onChange={handleChange}
+          onChange={handleChange}
           autoComplete="off"
         />
       </div>
@@ -49,7 +85,7 @@ function Form() {
           type="text"
           id="street"
           // value={street}
-          // onChange={handleChange}
+          onChange={handleChange}
           autoComplete="off"
         />
       </div>
@@ -59,7 +95,7 @@ function Form() {
           type="text"
           id="city"
           // value={city}
-          // onChange={handleChange}
+          onChange={handleChange}
           autoComplete="off"
         />
       </div>
@@ -69,7 +105,7 @@ function Form() {
           type="text"
           id="state"
           // value={state}
-          // onChange={handleChange}
+          onChange={handleChange}
           autoComplete="off"
         />
       </div>
@@ -79,7 +115,7 @@ function Form() {
           type="text"
           id="zipCode"
           // value={zipCode}
-          // onChange={handleChange}
+          onChange={handleChange}
           autoComplete="off"
         />
       </div>
@@ -89,11 +125,16 @@ function Form() {
           type="text"
           id="departement"
           // value={departement}
-          // onChange={handleChange}
+          onChange={handleChange}
           autoComplete="off"
         />
       </div>
       {/* {btn} */}
+      {/* <input
+        type="submit"
+        value="Add-employee"
+        className="add-employee-button"
+      /> */}
     </form>
   )
 }
