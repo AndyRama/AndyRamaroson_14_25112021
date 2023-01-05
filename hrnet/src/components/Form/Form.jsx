@@ -36,10 +36,45 @@ function Form() {
       zipCode: employee.zipCode,
       departement: employee.departement,
     }
+
+    console.log({ ...newEmployee })
+    console.log(newEmployee.id)
+    localStorage.setItem('newEmployee', JSON.stringify(newEmployee))
   }
 
+  const {
+    firstName,
+    lastName,
+    dateOfBirth,
+    startDate,
+    street,
+    city,
+    state,
+    zipCode,
+    departement,
+  } = employee
+
+  const btn =
+    firstName === '' ||
+    lastName === '' ||
+    dateOfBirth === '' ||
+    startDate === '' ||
+    street === '' ||
+    city === '' ||
+    state === '' ||
+    zipCode === '' ||
+    departement === '' ? (
+      <button type="submit" className="add-employee-button" disabled>
+        Add an employee
+      </button>
+    ) : (
+      <button type="submit" className="add-employee-button">
+        Add an employee
+      </button>
+    )
+
   return (
-    <form action="" id="add-employee-form">
+    <form action="" id="add-employee-form" onSubmit={handleSubmit}>
       <img
         className="add-employee-ico"
         // src={iconAdd}
@@ -50,31 +85,37 @@ function Form() {
         <input
           type="text"
           id="firstName"
-          // value={firstName}
+          value={firstName}
           onChange={handleChange}
           autoComplete="off"
         />
       </div>
       <div className="input-wrapper">
-        <label htmlFor="LastName">last Name</label>
+        <label htmlFor="LastName">Last Name</label>
         <input
           type="text"
           id="lastName"
-          // value={lastName}
+          value={lastName}
           onChange={handleChange}
           autoComplete="off"
         />
       </div>
       <div className="input-wrapper">
         <label htmlFor="date-of-birth">Date of Birth</label>
-        <input id="date-of-birth" type="text" /> {/* Change datapicker */}
+        <input
+          id="date-of-birth"
+          type="date"
+          value={dateOfBirth}
+          onChange={handleChange}
+          autoComplete="off"
+        />
       </div>
       <div className="input-wrapper">
         <label htmlFor="startDate">Start Date</label>
         <input
           type="text"
           id="startDate"
-          // value={startDate}
+          value={startDate}
           onChange={handleChange}
           autoComplete="off"
         />
@@ -84,7 +125,7 @@ function Form() {
         <input
           type="text"
           id="street"
-          // value={street}
+          value={street}
           onChange={handleChange}
           autoComplete="off"
         />
@@ -94,7 +135,7 @@ function Form() {
         <input
           type="text"
           id="city"
-          // value={city}
+          value={city}
           onChange={handleChange}
           autoComplete="off"
         />
@@ -104,7 +145,7 @@ function Form() {
         <input
           type="text"
           id="state"
-          // value={state}
+          value={state}
           onChange={handleChange}
           autoComplete="off"
         />
@@ -114,7 +155,7 @@ function Form() {
         <input
           type="text"
           id="zipCode"
-          // value={zipCode}
+          value={zipCode}
           onChange={handleChange}
           autoComplete="off"
         />
@@ -124,12 +165,12 @@ function Form() {
         <input
           type="text"
           id="departement"
-          // value={departement}
+          value={departement}
           onChange={handleChange}
           autoComplete="off"
         />
       </div>
-      {/* {btn} */}
+      {btn}
       {/* <input
         type="submit"
         value="Add-employee"
