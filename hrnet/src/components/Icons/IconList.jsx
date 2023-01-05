@@ -9,7 +9,7 @@ function IconList() {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g clip-path="url(#clip0_101_44)">
+      <g clipPath="url(#clip0_101_44)">
         <path
           d="M8 7.25H21"
           stroke="#CAD3AF"
