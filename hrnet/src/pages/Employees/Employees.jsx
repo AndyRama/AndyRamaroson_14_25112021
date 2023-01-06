@@ -1,6 +1,5 @@
-import Table from '../../components/Table/Table'
 import { useEffect } from 'react'
-import './Employees.scss'
+import Table from '../../components/Table/Table'
 
 function Employees() {
   useEffect(() => {

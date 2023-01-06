@@ -1,5 +1,5 @@
-import Form from '../../components/Form/Form'
 import { useEffect } from 'react'
+import Form from '../../components/Form/Form'
 import './Home.scss'
 
 function Home() {
