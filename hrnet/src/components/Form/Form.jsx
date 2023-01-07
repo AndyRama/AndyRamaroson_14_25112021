@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
 import IconAdd from '../Icons/IconAdd'
+import DatePicker from 'react-datepicker'
+import 'react-datepicker/dist/react-datepicker.css'
+
 import './Form.scss'
 
 function Form() {
@@ -102,13 +105,7 @@ function Form() {
       </div>
       <div className="input-wrapper">
         <label htmlFor="date-of-birth">Date of Birth</label>
-        <input
-          id="date-of-birth"
-          type="date"
-          value={dateOfBirth}
-          onChange={handleChange}
-          autoComplete="off"
-        />
+        <DatePicker selected={dateOfBirth} onChange={handleChange} />
       </div>
       <div className="input-wrapper">
         <label htmlFor="startDate">Start Date</label>
