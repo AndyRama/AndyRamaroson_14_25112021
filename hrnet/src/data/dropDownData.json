@@ -1,0 +1,30 @@
+[
+  {
+    "className": "stateAbbrev address",
+    "id": "stateAbbrev",
+    "label": "State",
+    "type": "text",
+    "select": [
+      {
+        "label": "select",
+        "value": "",
+        "abbrev": ""
+      },
+      {
+        "label": "Support",
+        "value": "Support",
+        "abbrev": "Fr"
+      }
+    ]
+  },
+  {
+    "className": "department",
+    "id": "department",
+    "label": "Department",
+    "type": "text",
+    "select": [
+      { "abbrev": "NO", "value": "select", "label": "select" },
+      { "abbrev": "SU", "value": "Support", "label": "Support" }
+    ]
+  }
+]

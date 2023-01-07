@@ -1,180 +1,115 @@
 import React, { useState } from 'react'
 import IconAdd from '../Icons/IconAdd'
-import DatePicker from 'react-datepicker'
-import 'react-datepicker/dist/react-datepicker.css'
+import employeeList from '../../data/mockData.json'
+import inputData from '../../data/inputData.json'
+import dropDownData from '../../data/dropDownData.json'
+
+import Input from '../Input/Input'
+import Dropdown from '../DropDown/DropDown'
 
 import './Form.scss'
 
-function Form() {
+import { useNavigate } from 'react-router-dom'
+
+/**
+ * Form
+ * @returns {Reactnode}  jsx injected in DOM
+ */
+export default function Form() {
+  // FORM SETTINGS
   const initialState = {
     firstName: '',
     lastName: '',
     dateOfBirth: '',
-    startDate: '',
     street: '',
     city: '',
-    state: '',
     zipCode: '',
-    departement: '',
+    stateAbbrev: '',
+    startDate: '',
+    department: '',
   }
 
-  const [employee, setEmployee] = useState(initialState)
+  const [newEmployee, setNewEmployee] = useState(initialState)
 
+  const redirectTo = useNavigate()
+  function goTo() {
+    redirectTo('/employees')
+  }
+
+  // ON CHANGE
   const handleChange = (e) => {
-    setEmployee({ ...employee, [e.target.id]: e.target.value })
+    setNewEmployee({ ...newEmployee, [e.target.id]: e.target.value.trim() })
   }
 
-  // eslint-disable-next-line no-unused-vars
+  // GET DATA
+  let employeesList =
+    JSON.parse(window.localStorage.getItem('employeesList')) || employeeList
+
+  // ON SUBMIT
   const handleSubmit = (e) => {
     e.preventDefault()
 
-    // eslint-disable-next-line no-unused-vars
-    const newEmployee = {
-      firstName: employee.firstName,
-      lastName: employee.lastName,
-      dateOfBirth: employee.dateOfBirth,
-      startDate: employee.startDate,
-      street: employee.street,
-      city: employee.city,
-      state: employee.state,
-      zipCode: employee.zipCode,
-      departement: employee.departement,
-    }
+    // update data
+    employeesList.push(newEmployee)
 
-    console.log({ ...newEmployee })
-    console.log(newEmployee.id)
-    localStorage.setItem('newEmployee', JSON.stringify(newEmployee))
+    // complete / correct data
+    newEmployee.id = employeesList.length
+    newEmployee.dateOfBirth = newEmployee.dateOfBirth.replace(/-/g, '/')
+    newEmployee.startDate = newEmployee.startDate.replace(/-/g, '/')
+
+    // store data
+    window.localStorage.setItem('employeesList', JSON.stringify(employeesList))
+
+    // reset form
+    setNewEmployee({ ...newEmployee }, e.target.reset())
   }
 
-  const {
-    firstName,
-    lastName,
-    dateOfBirth,
-    startDate,
-    street,
-    city,
-    state,
-    zipCode,
-    departement,
-  } = employee
-
-  const btn =
-    firstName === '' ||
-    lastName === '' ||
-    dateOfBirth === '' ||
-    startDate === '' ||
-    street === '' ||
-    city === '' ||
-    state === '' ||
-    zipCode === '' ||
-    departement === '' ? (
-      <button type="submit" className="add-employee-button" disabled>
-        Add an employee
-      </button>
-    ) : (
-      <button type="submit" className="add-employee-button">
-        Add an employee
-      </button>
-    )
-
   return (
-    <form action="" id="add-employee-form" onSubmit={handleSubmit}>
+    <form action="" className="form-newEmployee" onSubmit={handleSubmit}>
       <IconAdd
         className="add-employee-ico"
         alt="Health Wealth logo brand name"
       />
-      <div className="input-wrapper">
-        <label htmlFor="firstName">First Name</label>
-        <input
-          type="text"
-          id="firstName"
-          value={firstName}
-          onChange={handleChange}
+
+      {inputData.map((data, index) => (
+        <Input
+          key={index}
+          type={data.type}
+          className={data.className}
+          htmlFor={data.id}
+          label={data.label}
+          id={data.id}
+          value={newEmployee[index]}
+          handleChange={handleChange}
           autoComplete="off"
         />
-      </div>
-      <div className="input-wrapper">
-        <label htmlFor="LastName">Last Name</label>
-        <input
-          type="text"
-          id="lastName"
-          value={lastName}
-          onChange={handleChange}
-          autoComplete="off"
+      ))}
+
+      <fieldset
+        id="addressContainer"
+        className="form-newEmployee--addressContainer"
+      >
+        <legend className="form-newEmployee--addressGroup">Address</legend>
+      </fieldset>
+
+      {dropDownData.map((data, index) => (
+        <Dropdown
+          key={index}
+          type={data.type}
+          className={data.className}
+          htmlFor={data.id}
+          label={data.label}
+          id={data.id}
+          select={data.select}
+          handleChange={handleChange}
         />
-      </div>
-      <div className="input-wrapper">
-        <label htmlFor="date-of-birth">Date of Birth</label>
-        <DatePicker selected={dateOfBirth} onChange={handleChange} />
-      </div>
-      <div className="input-wrapper">
-        <label htmlFor="startDate">Start Date</label>
-        <input
-          type="text"
-          id="startDate"
-          value={startDate}
-          onChange={handleChange}
-          autoComplete="off"
-        />
-      </div>
-      <div className="input-wrapper">
-        <label htmlFor="street">Street</label>
-        <input
-          type="text"
-          id="street"
-          value={street}
-          onChange={handleChange}
-          autoComplete="off"
-        />
-      </div>
-      <div className="input-wrapper">
-        <label htmlFor="city">City</label>
-        <input
-          type="text"
-          id="city"
-          value={city}
-          onChange={handleChange}
-          autoComplete="off"
-        />
-      </div>
-      <div className="input-wrapper">
-        <label htmlFor="state">State</label>
-        <input
-          type="text"
-          id="state"
-          value={state}
-          onChange={handleChange}
-          autoComplete="off"
-        />
-      </div>
-      <div className="input-wrapper">
-        <label htmlFor="zipCode">Zip Code</label>
-        <input
-          type="text"
-          id="zipCode"
-          value={zipCode}
-          onChange={handleChange}
-          autoComplete="off"
-        />
-      </div>
-      <div className="input-wrapper">
-        <label htmlFor="departement">Departement</label>
-        <input
-          type="text"
-          id="departement"
-          value={departement}
-          onChange={handleChange}
-          autoComplete="off"
-        />
-      </div>
-      {btn}
-      {/* <input
-        type="submit"
-        value="Add-employee"
-        className="add-employee-button"
-      /> */}
+      ))}
+
+      <button type="submit" className="submit form-newEmployee--submit">
+        Save
+      </button>
+
+      {/* {submit} */}
     </form>
   )
 }
-
-export default Form
