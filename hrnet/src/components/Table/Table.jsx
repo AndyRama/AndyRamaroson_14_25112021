@@ -1,55 +1,14 @@
-// import React from 'react';
-// import employeeList from '../../data/mockData.json';
-// import titles from '../../data/tableTitles.json';
-// import './Table.css';
-
-// function Table() {
-//   // const newEmployee = localStorage.getItem('newEmployee');
-//   // const newEmployee = JSON.parse(localStorage.getItem('newEmployee'));
-//   // console.log(newEmployee);
-//   // employeeList.push((newEmployee));
-
-//   return (
-//     <table id="employees">
-//       <thead>
-//         {titles.map((title, index) => (
-//           <tr key={index}>
-//             <th>{title.firstName}</th>
-//             <th>{title.lastName}</th>
-//             <th>{title.startDate}</th>
-//             <th>{title.department}</th>
-//             <th>{title.dateOfBirth}</th>
-//             <th colSpan="4">{title.address}</th>
-//           </tr>
-//         ))}
-//       </thead>
-//       <tbody>
-//         {employeeList.map((employee, index) => (
-//           <tr key={index}>
-//             <td>{employee.first_name}</td>
-//             <td>{employee.last_name}</td>
-//             <td>{employee.start_date}</td>
-//             <td>{employee.department}</td>
-//             <td>{employee.date_of_birth}</td>
-//             <td>{employee.street}</td>
-//             <td>{employee.city}</td>
-//             <td>{employee.state}</td>
-//             <td>{employee.zip_code}</td>
-//           </tr>
-//         ))}
-//       </tbody>
-//     </table>
-//   );
-// }
-
-// export default Table
-
 import React, { useMemo } from 'react'
 import employeeList from '../../data/mockData.json'
 import { TableColumns } from './TableColumns'
 import './Table.scss'
 
-import { useGlobalFilter, useTable } from 'react-table'
+import {
+  useTable,
+  useSortBy,
+  useGlobalFilter,
+  usePagination,
+} from 'react-table'
 
 function Table() {
   // Get data
@@ -67,7 +26,9 @@ function Table() {
       columns: columns,
       data: data,
     },
-    useGlobalFilter
+    useGlobalFilter,
+    useSortBy,
+    usePagination
   )
 
   //Table Props to definie table instance
@@ -76,8 +37,17 @@ function Table() {
     getTableBodyProps,
     headerGroups,
     page,
-    rows,
+    nextPage,
+    canNextPage,
+    previousPage,
+    canPreviousPage,
+    pageOptions,
+    gotoPage,
+    pageCount,
+    setPageSize,
     prepareRow,
+    state,
+    pageSize,
     setGlobalFilter,
   } = tableInstance
 
@@ -122,11 +92,40 @@ function Table() {
     return (
       <tr {...row.getRowProps()}>
         {row.cells.map((cell) => {
-          return <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
+          return (
+            <td tabIndex="0" {...cell.getCellProps()}>
+              {cell.render('Cell')}
+            </td>
+          )
         })}
       </tr>
     )
   })
+
+  //Handle Table State for diff opts
+  const { globalFilter, pageIndex, pageSige } = state
+
+  return (
+    <>
+      <header className="table-header">
+        <label htmlFor="show-entries" className="table-header--entries">
+          Show
+          <select
+            value={pageSize}
+            id="show-entries"
+            onChange={(e) => setPageSize(Number(e.target.value))}
+          >
+            {[10, 20, 30, 40, 50].map((pageSize) => (
+              <option key={pageSize} value={pageSize}>
+                {pageSize}
+              </option>
+            ))}
+          </select>
+          entries
+        </label>
+      </header>
+    </>
+  )
 }
 
 export default Table
