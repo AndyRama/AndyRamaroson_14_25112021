@@ -75,6 +75,7 @@ function Table() {
     getTableProps,
     getTableBodyProps,
     headerGroups,
+    page,
     rows,
     prepareRow,
     setGlobalFilter,
@@ -111,6 +112,18 @@ function Table() {
             </span>
           </th>
         ))}
+      </tr>
+    )
+  })
+
+  //TABLE BODY content mapping to rendering
+  const tbodyContent = page.map((row) => {
+    prepareRow(row)
+    return (
+      <tr {...row.getRowProps()}>
+        {row.cells.map((cell) => {
+          return <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
+        })}
       </tr>
     )
   })
