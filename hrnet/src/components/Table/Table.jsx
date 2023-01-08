@@ -48,7 +48,6 @@ function Table() {
     setPageSize,
     prepareRow,
     state,
-    pageSize,
     setGlobalFilter,
   } = tableInstance
 
@@ -93,18 +92,14 @@ function Table() {
     return (
       <tr {...row.getRowProps()}>
         {row.cells.map((cell) => {
-          return (
-            <td tabIndex="0" {...cell.getCellProps()}>
-              {cell.render('Cell')}
-            </td>
-          )
+          return <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
         })}
       </tr>
     )
   })
 
   //Handle Table State for diff opts
-  const { globalFilter, pageIndex, pageSige } = state
+  const { globalFilter, pageIndex, pageSize } = state
 
   return (
     <>
