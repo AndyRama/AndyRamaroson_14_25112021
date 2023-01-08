@@ -132,6 +132,12 @@ function Table() {
           setFilter={setGlobalFilter}
         />
       </header>
+      <main className="table-main">
+        <table className="table-main--list" {...getTableProps()}>
+          <thead>{theadContent}</thead>
+          <tbody {...getTableBodyProps()}>{tbodyContent}</tbody>
+        </table>
+      </main>
     </>
   )
 }
