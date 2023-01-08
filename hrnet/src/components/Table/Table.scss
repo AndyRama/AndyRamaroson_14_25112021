@@ -1,38 +1,50 @@
-h3 {
-  color: var(--tertiary);
-  text-shadow: 0 0 0.5px var(--secondary);
+/* PAGE */
+.table {
+  width: 90%;
+  margin: auto;
 }
 
-#employees {
-  border-collapse: collapse;
-  width: 100%;
+.table-main {
+  width: 90%;
+  margin: auto;
 }
 
-#employees th {
-  padding: 5px;
-  background-color: var(--secondary);
-  color: var(--light);
+/* HEADER */
+/* FILTER OPTIONS */
+.table-header {
+  display: flex;
+  align-items: center;
 }
 
-#employees th,
-#employees td {
-  border: 1px solid var(--light);
+.table-header > * {
+  flex: 1 1 0;
 }
 
-#employees td {
-  padding: 2px 0px 2px 10px;
+.table-header--entries select {
+  cursor: pointer;
+  margin: 0.25rem;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  font-size: small;
 }
 
-#employees tr:nth-child(even) {
-  background-color: var(--table-row);
+.table-header--search {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
-#employees thead :nth-child(2) > * {
-  color: var(--tertiary);
+.table-header--search svg {
+  width: 16px;
+  height: 16px;
+  margin-right: 0.25rem;
 }
 
-#employees tr:hover,
-#employees tr:focus,
-#employees td {
-  background-color: var(--tertiary);
+.table-header--search input {
+  margin-left: 0.5rem;
+  padding: 0.25rem;
+  border: 1px solid var(--primary);
+  border-radius: 0.25rem;
 }
