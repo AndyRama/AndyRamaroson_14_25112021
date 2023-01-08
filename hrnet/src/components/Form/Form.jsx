@@ -59,10 +59,7 @@ export default function Form() {
 
   return (
     <form action="" className="form-newEmployee" onSubmit={handleSubmit}>
-      <IconAdd
-        className="add-employee-ico"
-        alt="Health Wealth logo brand name"
-      />
+      <IconAdd id="addUser" alt="Health Wealth add user" />
 
       {inputData.map((data, index) => (
         <Input

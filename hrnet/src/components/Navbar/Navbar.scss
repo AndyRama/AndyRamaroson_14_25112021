@@ -40,13 +40,11 @@ nav {
   align-items: center;
   padding: 0 1rem;
   color: var(--secondary);
-  /* color: var(--tertiary); */
 }
 
 .nav-menu-choice:hover {
   background: var(--secondary);
   color: var(--tertiary);
-  /* color: var(--light); */
 }
 
 .nav-logo-design {
@@ -70,7 +68,6 @@ nav {
   margin-bottom: 0;
   padding: 0;
   background-color: var(--tertiary);
-  /* border: 0; */
 }
 
 @media screen and (max-width: 768px) {

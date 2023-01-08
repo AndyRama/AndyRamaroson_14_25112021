@@ -138,6 +138,43 @@ function Table() {
           <tbody {...getTableBodyProps()}>{tbodyContent}</tbody>
         </table>
       </main>
+      <footer className="table-footer">
+        <span className="table-footer--pageIndex">
+          <strong>
+            Page{pageIndex + 1} of {pageOptions.length}
+          </strong>
+        </span>
+        <span className="table-footer--nav">
+          <button
+            className="table-nav--btn"
+            onClick={() => gotoPage(0)}
+            disabled={!canPreviousPage}
+          >
+            « First
+          </button>
+          <button
+            className="table-nav--btn"
+            onClick={() => previousPage()}
+            disabled={!canPreviousPage}
+          >
+            ‹ Previous
+          </button>
+          <button
+            className="table-nav--btn"
+            onClick={() => nextPage()}
+            disabled={!canNextPage}
+          >
+            Next ›
+          </button>
+          <button
+            className="table-nav--btn"
+            onClick={() => gotoPage(pageCount - 1)}
+            disabled={!canNextPage}
+          >
+            Last »
+          </button>
+        </span>
+      </footer>
     </>
   )
 }
