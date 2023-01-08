@@ -11,9 +11,14 @@
         "abbrev": ""
       },
       {
-        "label": "Support",
-        "value": "Support",
+        "label": "France",
+        "value": "France",
         "abbrev": "Fr"
+      },
+      {
+        "label": "Californie",
+        "value": "Californie",
+        "abbrev": "CA"
       }
     ]
   },
@@ -24,7 +29,7 @@
     "type": "text",
     "select": [
       { "abbrev": "NO", "value": "select", "label": "select" },
-      { "abbrev": "SU", "value": "Support", "label": "Support" }
+      { "abbrev": "SU", "value": "ENGINEERING", "label": "ENGINEERING" }
     ]
   }
 ]

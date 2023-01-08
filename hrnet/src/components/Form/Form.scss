@@ -101,11 +101,8 @@ select {
   margin-top: 1rem;
   margin-bottom: 1rem;
   border: 1px solid var(--disabled);
-  /* border: 1px solid antiquewhite; */
   border-radius: 0.5rem 0 0.5rem 0.5rem;
   background-color: #eef1e3;
-  /* background-color: antiquewhite; */
-  z-index: 8;
 }
 
 .form-newEmployee--addressGroup {
@@ -115,12 +112,10 @@ select {
   font-weight: 100;
   padding: 0 0.5rem;
   background-color: #eef1e3;
-  /* background-color: antiquewhite; */
   border-radius: 0.5rem 0.5rem 0 0;
   font-family: 'Open Sans Condensed';
   color: var(--primary);
   text-align: right;
-  z-index: -1;
 }
 
 /* SUBMIT */

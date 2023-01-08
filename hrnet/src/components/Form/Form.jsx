@@ -9,8 +9,6 @@ import Dropdown from '../DropDown/DropDown'
 
 import './Form.scss'
 
-import { useNavigate } from 'react-router-dom'
-
 /**
  * Form
  * @returns {Reactnode}  jsx injected in DOM
@@ -30,11 +28,6 @@ export default function Form() {
   }
 
   const [newEmployee, setNewEmployee] = useState(initialState)
-
-  const redirectTo = useNavigate()
-  function goTo() {
-    redirectTo('/employees')
-  }
 
   // ON CHANGE
   const handleChange = (e) => {

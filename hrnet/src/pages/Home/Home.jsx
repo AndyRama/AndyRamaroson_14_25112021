@@ -4,7 +4,6 @@ import './Home.scss'
 
 import { getElement } from '../../utils/handlers'
 import { getElements } from '../../utils/handlers'
-import { setAttributes } from '../../utils/handlers'
 
 function Home() {
   useEffect(() => {

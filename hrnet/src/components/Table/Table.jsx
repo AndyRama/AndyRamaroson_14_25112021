@@ -4,11 +4,6 @@ import titles from '../../data/tableTitles.json'
 import './Table.scss'
 
 function Table() {
-  // const newEmployee = localStorage.getItem('newEmployee')
-  // const newEmployee = JSON.parse(localStorage.getItem('newEmployee'))
-  // console.log(newEmployee)
-  // employeeList.push(newEmployee)
-
   return (
     <table id="employees">
       <thead>
