@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react'
 import employeeList from '../../data/mockData.json'
 import { TableColumns } from './TableColumns'
+import TableFilter from './TableFilter'
 import './Table.scss'
 
 import {
@@ -123,6 +124,13 @@ function Table() {
           </select>
           entries
         </label>
+        <h3 className="table-header--title">{`currently ${employeesList.length} employees`}</h3>
+        <TableFilter
+          className="table-header--search"
+          id="search"
+          filter={globalFilter}
+          setFilter={setGlobalFilter}
+        />
       </header>
     </>
   )
