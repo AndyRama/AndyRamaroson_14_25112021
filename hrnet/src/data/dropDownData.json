@@ -29,7 +29,7 @@
     "type": "text",
     "select": [
       { "abbrev": "NO", "value": "select", "label": "select" },
-      { "abbrev": "SU", "value": "ENGINEERING", "label": "ENGINEERING" }
+      { "abbrev": "SU", "value": "Engineering", "label": "Engineering" }
     ]
   }
 ]
