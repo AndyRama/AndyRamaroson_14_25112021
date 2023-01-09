@@ -12,7 +12,7 @@ function TableFilter({ filter, setFilter, className, id }) {
   return (
     <span className={className}>
       <IconSearch />
-      <label htmlFor={id}>Search</label>
+      <label htmlFor={id}>Search:</label>
       <input
         id={id}
         type="search"

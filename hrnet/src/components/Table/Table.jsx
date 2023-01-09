@@ -92,7 +92,11 @@ function Table() {
     return (
       <tr {...row.getRowProps()}>
         {row.cells.map((cell) => {
-          return <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
+          return (
+            <td tabIndex="0" {...cell.getCellProps()}>
+              {cell.render('Cell')}
+            </td>
+          )
         })}
       </tr>
     )
@@ -136,7 +140,7 @@ function Table() {
       <footer className="table-footer">
         <span className="table-footer--pageIndex">
           <strong>
-            Page{pageIndex + 1} of {pageOptions.length}
+            Page {pageIndex + 1} of {pageOptions.length}
           </strong>
         </span>
         <span className="table-footer--nav">
