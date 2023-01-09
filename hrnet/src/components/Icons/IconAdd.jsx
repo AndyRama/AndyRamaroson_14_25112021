@@ -3,10 +3,11 @@ import React from 'react'
 function IconAdd() {
   return (
     <svg
-      width="24"
-      height="29"
+      width="30"
+      height="30"
       viewBox="0 0 24 29"
       fill="none"
+      id="addUser"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
