@@ -33,6 +33,7 @@ export default function Form() {
   const handleChange = (e) => {
     setNewEmployee({ ...newEmployee, [e.target.id]: e.target.value.trim() })
   }
+  console.log(newEmployee)
 
   // GET DATA
   let employeesList =
@@ -54,7 +55,7 @@ export default function Form() {
     window.localStorage.setItem('employeesList', JSON.stringify(employeesList))
 
     // reset form
-    setNewEmployee({ ...newEmployee }, e.target.reset())
+    // setNewEmployee({ ...newEmployee }, e.target.reset())
   }
 
   return (

@@ -1,13 +1,28 @@
 import React from 'react'
 import Select from 'react-select'
-import dropDownData from './../../data/dropDownData.json'
 
-function Dropdown({ className, id, label, select, type, value, handleChange }) {
+function Dropdown({ className, id, label, select, type, handleChange }) {
+  const state = [
+    { value: 'France', label: 'France' },
+    { value: 'Californie', label: 'Californie' },
+    { value: 'Madagascar', label: 'Madagascar' },
+  ]
+
+  const department = [
+    { value: 'Research and Development', label: 'Research and Development' },
+    { value: 'Engineering', label: 'Engineering' },
+    { value: 'Support', label: 'Support' },
+  ]
+
   return (
     <div className={`form-newEmployee--inputWrapper ${className}`}>
       <label htmlFor={id}>{label}</label>
       {type === 'text' ? (
-        <Select type="state" options={dropDownData} onChange={handleChange} />
+        <Select
+          type="state"
+          options={id === 'stateAbbrev' ? state : department}
+          onChange={handleChange}
+        />
       ) : (
         <select
           className="dropdownList"

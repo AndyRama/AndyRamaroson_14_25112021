@@ -1,6 +1,7 @@
 # WealthHealth - HRnet 🇫🇷  
 
 <kbd>![Add an employee](./WealthHealth_1.png)</kbd>
+<kbd>![Employees List](./WealthHealth_2.png)</kbd>
 
 > PROBLEMATIQUE
 

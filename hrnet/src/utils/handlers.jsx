@@ -26,7 +26,7 @@ export const getElements = (className) => {
  * @return  {object}                [element attributes]
  */
 export const setAttributes = (element, attributes) => {
-  for (const key in attributes) {
+  for (let key in attributes) {
     element.setAttribute(key, attributes[key])
   }
 }

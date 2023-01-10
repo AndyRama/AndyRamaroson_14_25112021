@@ -1,16 +1,12 @@
-{
-  "data": [
-    {
-      "label": "select",
-      "value": ""
-    },
-    {
-      "label": "France",
-      "value": "France"
-    },
-    {
-      "label": "Californie",
-      "value": "Californie"
-    }
-  ]
-}
+export default const state =[
+  {
+    "className": "department",
+    "id": "department",
+    "label": "Engeneery"
+  },
+  {
+    "className": "department",
+    "id": "department",
+    "label": "Developement"
+  }
+]
