@@ -1,6 +1,7 @@
 # WealthHealth - HRnet 🇫🇷  
 
 <kbd>![Add an employee](./WealthHealth_1.png)</kbd>
+
 <kbd>![Employees List](./WealthHealth_2.png)</kbd>
 
 > PROBLEMATIQUE
@@ -23,8 +24,8 @@ Utilisation en interne d'une application de gestion RH représentant 90% de la d
 - [x] Implémenter avec la programmation fonctionnelle `JAVASCRIPT`
 - [x] Créer un plugin et publier sa propre bibliothèque `REACT | NPM`
 - [x] Proposer un design graphique complet, harmonieux et cohérent avec l'identité de l'entreprise
-- [x] Déployer une application front-end `NPM`
-- [x] Analyser la performance d'une application web `LIGHTHOUSE`
+- [] Déployer une application front-end `NPM`
+- [] Analyser la performance d'une application web `LIGHTHOUSE`
 
 ## Ressources fournies
 
@@ -50,12 +51,13 @@ Utilisation en interne d'une application de gestion RH représentant 90% de la d
 
 ### Dépendances
 
-*  [react](https://fr.reactjs.org/docs/getting-started.html) (version 17.0.2)
-*  [react-router-dom](https://reactrouter.com/web/guides/quick-start) (version 6.0.2)
+*  [react](https://fr.reactjs.org/docs/getting-started.html) (version 18.2.0)
+*  [react-router-dom](https://reactrouter.com/web/guides/quick-start) (version 6.6.1)
 *  [prop-types](https://fr.reactjs.org/docs/typechecking-with-proptypes.html) (version 15.8.0)
-*  [react-datepicker](https://reactdatepicker.com/) (version 4.5.0)
+*  [react-datepicker](https://reactdatepicker.com/) (version 4.8.0)
 *  [date-fns](https://date-fns.org/docs/Getting-Started) (version 2.27.0)
-*  [react-table](https://react-table.tanstack.com/docs/installation) (version 7.7.0)
+*  [react-select](https://react-select.com/home#getting-started) (version 5.7.0)
+*  [react-table](https://react-table.tanstack.com/docs/installation) (version 7.8.0)
 
 ### Lancement du front-end
 
@@ -84,12 +86,13 @@ ___
 
 ### Dependances
 
-*  [react](https://fr.reactjs.org/docs/getting-started.html) (version 17.0.2)
-*  [react-router-dom](https://reactrouter.com/web/guides/quick-start) (version 6.0.2)
+*  [react](https://fr.reactjs.org/docs/getting-started.html) (version 18.2.0)
+*  [react-router-dom](https://reactrouter.com/web/guides/quick-start) (version 6.6.1)
 *  [prop-types](https://fr.reactjs.org/docs/typechecking-with-proptypes.html) (version 15.8.0)
-*  [react-datepicker](https://reactdatepicker.com/) (version 4.5.0)
+*  [react-datepicker](https://reactdatepicker.com/) (version 4.8.0)
 *  [date-fns](https://date-fns.org/docs/Getting-Started) (version 2.27.0)
-*  [react-table](https://react-table.tanstack.com/docs/installation) (version 7.7.0)
+*  [react-select](https://react-select.com/home#getting-started) (version 5.7.0)
+*  [react-table](https://react-table.tanstack.com/docs/installation) (version 7.8.0)
 
 ### Installing and launching front-end
 
