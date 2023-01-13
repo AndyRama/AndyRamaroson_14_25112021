@@ -7,14 +7,20 @@ import dropDownData from '../../data/dropDownData.json'
 import Input from '../Input/Input'
 import Dropdown from '../DropDown/DropDown'
 
+// import{ useNavgate} from 'react-router-dom'
+// import {Modal, useModal} from 'andyrama-modal'
+// import confirm from '../../assets/ico-user-confirm.svg';
+// import close from '../../assets/ico-close.svg';
+
 import './Form.scss'
 
 /**
  * Form
  * @returns {Reactnode}  jsx injected in DOM
  */
-export default function Form() {
-  // FORM SETTINGS
+
+function Form() {
+  // Form module settings
   const initialState = {
     firstName: '',
     lastName: '',
@@ -29,17 +35,30 @@ export default function Form() {
 
   const [newEmployee, setNewEmployee] = useState(initialState)
 
-  // ON CHANGE
+  //Modal module settings
+  // const { isOpen, toggle, escToClose } = useModal()
+
+  // useEffect(() => {
+  //   window.addEventListener('keydown', escToClose)
+  //   return () => window.removeEventListener('keydown', escToClose)
+  // })
+
+  // const redirectTo = useNavigate()
+  // function goTo() {
+  //   redirectTo('/employees')
+  // }
+
+  // On change
   const handleChange = (e) => {
     setNewEmployee({ ...newEmployee, [e.target.id]: e.target.value.trim() })
   }
   console.log(newEmployee)
 
-  // GET DATA
+  // Get data from local storage
   let employeesList =
     JSON.parse(window.localStorage.getItem('employeesList')) || employeeList
 
-  // ON SUBMIT
+  // On submit
   const handleSubmit = (e) => {
     e.preventDefault()
 
@@ -55,7 +74,10 @@ export default function Form() {
     window.localStorage.setItem('employeesList', JSON.stringify(employeesList))
 
     // reset form
-    // setNewEmployee({ ...newEmployee }, e.target.reset())
+    setNewEmployee({ ...newEmployee }, e.target.reset())
+
+    // Open modal
+    // toggle()
   }
 
   return (
@@ -70,7 +92,7 @@ export default function Form() {
           htmlFor={data.id}
           label={data.label}
           id={data.id}
-          value={newEmployee[index]}
+          value={newEmployee[data]}
           handleChange={handleChange}
           autoComplete="off"
         />
@@ -101,6 +123,22 @@ export default function Form() {
       </button>
 
       {/* {submit} */}
+
+      {/* <Modal
+        modal={isOpen}
+        close={toggle}
+        x={close}
+        icon={confirm}
+        title="Confirmation added"
+        msgL1="New collaborator added"
+        msgL2="Successfully registered"
+        btn1="Add an employee"
+        btn2="Employees List"
+        redirectTo={goTo}
+        autofocus
+      /> */}
     </form>
   )
 }
+
+export default Form

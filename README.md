@@ -24,8 +24,8 @@ Utilisation en interne d'une application de gestion RH représentant 90% de la d
 - [x] Implémenter avec la programmation fonctionnelle `JAVASCRIPT`
 - [x] Créer un plugin et publier sa propre bibliothèque `REACT | NPM`
 - [x] Proposer un design graphique complet, harmonieux et cohérent avec l'identité de l'entreprise
-- [] Déployer une application front-end `NPM`
-- [] Analyser la performance d'une application web `LIGHTHOUSE`
+- [x] Déployer une application front-end `NPM`
+- [x] Analyser la performance d'une application web `LIGHTHOUSE`
 
 ## Ressources fournies
 
@@ -61,10 +61,10 @@ Utilisation en interne d'une application de gestion RH représentant 90% de la d
 
 ### Lancement du front-end
 
-- [ ] Cloner le repo : `gh repo clone AndyRama/AndyRamaroson_14_25112021`
-- [ ] Aller dans ce dossier : `cd hrnet`
-- [ ] Installer ses dépendances : `npm install`
-- [ ] Lancer l'application : `npm start`
+- [x] Cloner le repo : `gh repo clone AndyRama/AndyRamaroson_14_25112021`
+- [x] Aller dans ce dossier : `cd hrnet`
+- [x] Installer ses dépendances : `npm install`
+- [x] Lancer l'application : `npm start`
 
 ```bash
 URL de visualisation du rendu web : http://localhost:3000
@@ -96,10 +96,10 @@ ___
 
 ### Installing and launching front-end
 
-- [ ] Clone the repository: `gh repo clone AndyRama/AndyRamaroson_14_25112021`
-- [ ] Move to this folder: `cd hrnet`
-- [ ] Install dependencies: `npm install`
-- [ ] Launch application: `npm start`
+- [x] Clone the repository: `gh repo clone AndyRama/AndyRamaroson_14_25112021`
+- [x] Move to this folder: `cd hrnet`
+- [x] Install dependencies: `npm install`
+- [x] Launch application: `npm start`
 
 ```bash
 Front-end is now rendered at URL http://localhost:3000

@@ -6,7 +6,15 @@ function Input({ className, id, label, type, value, handleChange }) {
     <div className={`form-newEmployee--inputWrapper ${className}`}>
       <label htmlFor={id}>{label}</label>
       {type === 'date' ? (
-        <DatePicker selected={value} onChange={handleChange} />
+        <DatePicker
+          type={type}
+          id={id}
+          selected={value}
+          onChange={handleChange}
+          autoComplete="off"
+          aria-required="true"
+          required
+        />
       ) : (
         <input
           type={type}

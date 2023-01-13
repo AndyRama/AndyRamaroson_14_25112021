@@ -22,14 +22,17 @@ function Dropdown({ className, id, label, select, type, handleChange }) {
           type="state"
           options={id === 'stateAbbrev' ? state : department}
           onChange={handleChange}
+          aria-required="true"
+          required
+          id={id}
         />
       ) : (
         <select
           className="dropdownList"
-          id={id}
           onChange={handleChange}
           aria-required="true"
           required
+          id={id}
         >
           {select.map((item) => (
             <option
