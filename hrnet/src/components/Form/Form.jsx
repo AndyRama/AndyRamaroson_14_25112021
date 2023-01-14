@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import IconAdd from '../Icons/IconAdd'
 import employeeList from '../../data/mockData.json'
 import inputData from '../../data/inputData.json'
@@ -7,10 +7,10 @@ import dropDownData from '../../data/dropDownData.json'
 import Input from '../Input/Input'
 import Dropdown from '../DropDown/DropDown'
 
-// import{ useNavgate} from 'react-router-dom'
-// import {Modal, useModal} from 'andyrama-modal'
-// import confirm from '../../assets/ico-user-confirm.svg';
-// import close from '../../assets/ico-close.svg';
+import { useNavigate } from 'react-router-dom'
+import { Modal, useModal } from 'andyrama-modal'
+import confirm from '../Icons/IconUser'
+import close from '../Icons/IconClose'
 
 import './Form.scss'
 
@@ -36,17 +36,17 @@ function Form() {
   const [newEmployee, setNewEmployee] = useState(initialState)
 
   //Modal module settings
-  // const { isOpen, toggle, escToClose } = useModal()
+  const { isOpen, toggle, escToClose } = useModal()
 
-  // useEffect(() => {
-  //   window.addEventListener('keydown', escToClose)
-  //   return () => window.removeEventListener('keydown', escToClose)
-  // })
+  useEffect(() => {
+    window.addEventListener('keydown', escToClose)
+    return () => window.removeEventListener('keydown', escToClose)
+  })
 
-  // const redirectTo = useNavigate()
-  // function goTo() {
-  //   redirectTo('/employees')
-  // }
+  const redirectTo = useNavigate()
+  function goTo() {
+    redirectTo('/employees')
+  }
 
   // On change
   const handleChange = (e) => {
@@ -77,7 +77,7 @@ function Form() {
     setNewEmployee({ ...newEmployee }, e.target.reset())
 
     // Open modal
-    // toggle()
+    toggle()
   }
 
   return (
@@ -124,7 +124,7 @@ function Form() {
 
       {/* {submit} */}
 
-      {/* <Modal
+      <Modal
         modal={isOpen}
         close={toggle}
         x={close}
@@ -136,7 +136,7 @@ function Form() {
         btn2="Employees List"
         redirectTo={goTo}
         autofocus
-      /> */}
+      />
     </form>
   )
 }
