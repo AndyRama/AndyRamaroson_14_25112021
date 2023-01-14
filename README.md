@@ -35,7 +35,7 @@ Utilisation en interne d'une application de gestion RH représentant 90% de la d
 ## Bibliothèques
 
     REACT
-    ANDYRAMA-modal
+    andyrama-modal
 
 ## Installation
 
@@ -59,6 +59,8 @@ Utilisation en interne d'une application de gestion RH représentant 90% de la d
 *  [react-select](https://react-select.com/home#getting-started) (version 5.7.0)
 *  [react-table](https://react-table.tanstack.com/docs/installation) (version 7.8.0)
 
+[![NPM](https://img.shields.io/npm/v/andyrama-modal.svg)](https://www.npmjs.com/package/andyrama-modal)[andyrama-modal](https://www.npmjs.com/package/andyrama-modal) (version 0.1.1)
+
 ### Lancement du front-end
 
 - [x] Cloner le repo : `gh repo clone AndyRama/AndyRamaroson_14_25112021`
@@ -69,7 +71,6 @@ Utilisation en interne d'une application de gestion RH représentant 90% de la d
 ```bash
 URL de visualisation du rendu web : http://localhost:3000
 ```
-
 ___
 
 # WealthHealth - HRnet 🇬🇧
