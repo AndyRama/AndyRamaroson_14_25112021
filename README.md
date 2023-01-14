@@ -58,8 +58,7 @@ Utilisation en interne d'une application de gestion RH représentant 90% de la d
 *  [date-fns](https://date-fns.org/docs/Getting-Started) (version 2.27.0)
 *  [react-select](https://react-select.com/home#getting-started) (version 5.7.0)
 *  [react-table](https://react-table.tanstack.com/docs/installation) (version 7.8.0)
-
-[![NPM](https://img.shields.io/npm/v/andyrama-modal.svg)](https://www.npmjs.com/package/andyrama-modal)[andyrama-modal](https://www.npmjs.com/package/andyrama-modal) (version 0.1.1)
+*  [andyrama-modal](https://www.npmjs.com/package/andyrama-modal)[![NPM](https://img.shields.io/npm/v/andyrama-modal.svg)](https://www.npmjs.com/package/andyrama-modal)
 
 ### Lancement du front-end
 
@@ -94,7 +93,7 @@ ___
 *  [date-fns](https://date-fns.org/docs/Getting-Started) (version 2.27.0)
 *  [react-select](https://react-select.com/home#getting-started) (version 5.7.0)
 *  [react-table](https://react-table.tanstack.com/docs/installation) (version 7.8.0)
-
+*  [andyrama-modal](https://www.npmjs.com/package/andyrama-modal)
 ### Installing and launching front-end
 
 - [x] Clone the repository: `gh repo clone AndyRama/AndyRamaroson_14_25112021`
