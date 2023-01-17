@@ -1,30 +1,28 @@
 import React from 'react'
 import Select from 'react-select'
 
-function Dropdown({ className, id, label, select, type, handleChange }) {
-  const state = [
-    { value: 'France', label: 'France' },
-    { value: 'Californie', label: 'Californie' },
-    { value: 'Madagascar', label: 'Madagascar' },
-  ]
-
-  const department = [
-    { value: 'Research and Development', label: 'Research and Development' },
-    { value: 'Engineering', label: 'Engineering' },
-    { value: 'Support', label: 'Support' },
-  ]
-
+function Dropdown({
+  className,
+  id,
+  label,
+  select,
+  type,
+  handleChange,
+  state,
+  departement,
+}) {
   return (
     <div className={`form-newEmployee--inputWrapper ${className}`}>
       <label htmlFor={id}>{label}</label>
       {type === 'text' ? (
         <Select
           type="state"
-          options={id === 'stateAbbrev' ? state : department}
+          options={id === 'stateAbbrev' ? state : departement}
           onChange={handleChange}
           aria-required="true"
           required
-          id={id}
+          // state={state}
+          // departement={departement}
         />
       ) : (
         <select

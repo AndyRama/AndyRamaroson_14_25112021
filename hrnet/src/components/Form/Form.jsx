@@ -33,6 +33,18 @@ function Form() {
     department: '',
   }
 
+  const state = [
+    { value: 'France', label: 'France' },
+    { value: 'Californie', label: 'Californie' },
+    { value: 'Madagascar', label: 'Madagascar' },
+  ]
+
+  const department = [
+    { value: 'Research and Development', label: 'Research and Development' },
+    { value: 'Engineering', label: 'Engineering' },
+    { value: 'Support', label: 'Support' },
+  ]
+
   const [newEmployee, setNewEmployee] = useState(initialState)
 
   //Modal module settings
@@ -48,9 +60,19 @@ function Form() {
     redirectTo('/employees')
   }
 
+  const handleChangeDepartement = (e) => {
+    setNewEmployee({
+      ...newEmployee,
+      [e.value]: e.value.value,
+    })
+  }
+
   // On change
   const handleChange = (e) => {
-    setNewEmployee({ ...newEmployee, [e.target.id]: e.target.value.trim() })
+    setNewEmployee({
+      ...newEmployee,
+      [e.target.id]: e.target.value.trim(),
+    })
   }
   console.log(newEmployee)
 
@@ -82,8 +104,7 @@ function Form() {
 
   return (
     <form action="" className="form-newEmployee" onSubmit={handleSubmit}>
-      <IconAdd id="addUser" alt="Health Wealth add user" />
-
+      <IconAdd alt="Health Wealth add user" />
       {inputData.map((data, index) => (
         <Input
           key={index}
@@ -113,8 +134,10 @@ function Form() {
           htmlFor={data.id}
           label={data.label}
           id={data.id}
-          select={data.select}
-          handleChange={handleChange}
+          select={state}
+          departement={department}
+          state={state}
+          handleChange={handleChangeDepartement}
         />
       ))}
 
