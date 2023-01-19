@@ -9,7 +9,7 @@ function Dropdown({
   type,
   handleChange,
   state,
-  departement,
+  department,
 }) {
   return (
     <div className={`form-newEmployee--inputWrapper ${className}`}>
@@ -17,12 +17,12 @@ function Dropdown({
       {type === 'text' ? (
         <Select
           type="state"
-          options={id === 'stateAbbrev' ? state : departement}
+          options={id === 'stateAbbrev' ? state : department}
           onChange={handleChange}
           aria-required="true"
           required
-          // state={state}
-          // departement={departement}
+          state={state}
+          departement={department}
         />
       ) : (
         <select

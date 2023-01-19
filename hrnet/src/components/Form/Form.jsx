@@ -60,12 +60,12 @@ function Form() {
     redirectTo('/employees')
   }
 
-  const handleChangeDepartement = (departement) => {
+  const handleChangeDepartment = (department) => {
     setNewEmployee({
       ...newEmployee,
-      department: departement.value,
+      department: department.value,
     })
-    console.log(departement.value)
+    console.log(department.value)
   }
 
   const handleChangeState = (state) => {
@@ -144,10 +144,10 @@ function Form() {
           label={data.label}
           id={data.id}
           select={state}
-          departement={department}
+          department={department}
           state={state}
           handleChange={handleChangeState}
-          // handleChange={handleChangeDepartement}
+          handleChangeDepartment={handleChangeDepartment}
         />
       ))}
 
