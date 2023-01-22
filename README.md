@@ -13,7 +13,7 @@ Utilisation en interne d'une application de gestion RH représentant 90% de la d
 - Convertir l'application HRnet (code source 100% JQuery) en une application React
 - Convertir les plugins sources : 
   - sélecteur de date
-  - fenêtre modale
+  - fenêtre modale [andyrama-modal](https://www.npmjs.com/package/andyrama-modal) (version 0.1.1)
   - menus déroulants
   - tables de données
 - Comparer de performances entre l'ancienne et la nouvelle version
@@ -94,6 +94,7 @@ ___
 *  [react-select](https://react-select.com/home#getting-started) (version 5.7.0)
 *  [react-table](https://react-table.tanstack.com/docs/installation) (version 7.8.0)
 *  [andyrama-modal](https://www.npmjs.com/package/andyrama-modal) (version 0.1.1)
+
 ### Installing and launching front-end
 
 - [x] Clone the repository: `gh repo clone AndyRama/AndyRamaroson_14_25112021`
