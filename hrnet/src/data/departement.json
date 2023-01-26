@@ -1,9 +1,0 @@
-[
-  const department: { [
-    { value: 'Select', label: 'Select' },
-    { value: 'Research and Development', label: 'Research and Development' },
-    { value: 'Engineering', label: 'Engineering' },
-    { value: 'Support', label: 'Support' }
-  ]
-}
-]

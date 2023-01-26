@@ -1,5 +1,8 @@
 import { useEffect } from 'react'
 import Table from '../../components/Table/Table'
+import { getTags } from '../../utils/handlers'
+import { getNestedTags } from '../../utils/handlers'
+import { setAttributes } from '../../utils/handlers'
 
 function Employees() {
   useEffect(() => {

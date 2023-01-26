@@ -21,8 +21,7 @@ function Dropdown({
           onChange={handleChange}
           aria-required="true"
           required
-          state={state}
-          departement={department}
+          id={id}
         />
       ) : (
         <select
