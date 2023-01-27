@@ -3,14 +3,16 @@ import IconAdd from '../Icons/IconAdd'
 import employeeList from '../../data/mockData.json'
 import inputData from '../../data/inputData.json'
 import dropDownData from '../../data/dropDownData.json'
-import moment from 'moment'
+// import moment from 'moment'
 
 import Input from '../Input/Input'
 import Dropdown from '../DropDown/DropDown'
 
 import { useNavigate } from 'react-router-dom'
 import { Modal, useModal } from 'andyrama-modal'
-import close from '../Icons/IconClose'
+
+import close from '../../asset/ico-close.svg'
+import confirme from '../../asset/ico-user-confirm.svg'
 
 import './Form.scss'
 
@@ -59,20 +61,29 @@ function Form() {
 
   const redirectTo = useNavigate()
   function goTo() {
-    redirectTo('/employees')
+    redirectTo('employees')
   }
 
+  // const handleChangeDatepickerBirthDay = (date) => {
+  //   const age = moment(date).format('DD-MM-YY').replace(/-/g, '/')
+  //   setBirthday(age)
+  //   setNewEmployee({ ...newEmployee, dateOfBirth: age })
+  // }
+
+  // const handleChangeDatepickerStartDate = (date) => {
+  //   const begin = moment(date).format('DD-MM-YY').replace(/-/g, '/')
+  //   setStartDate(begin)
+  //   setNewEmployee({ ...newEmployee, startDate: begin })
+  // }
+
   const handleChangeDatepickerBirthDay = (date) => {
-    const formattedDate = moment(date).format('DD-MM-YY').replace(/-/g, '/')
-    setBirthday(formattedDate)
-    setNewEmployee({ ...newEmployee, dateOfBirth: formattedDate })
+    setBirthday(date)
+    setNewEmployee({ ...newEmployee, dateOfBirth: date })
   }
 
   const handleChangeDatepickerStartDate = (date) => {
-    const formattedStart = moment(date).format('DD-MM-YY').replace(/-/g, '/')
-    setStartDate(formattedStart)
-    console.log(date)
-    setNewEmployee({ ...newEmployee, startDate: formattedStart })
+    setStartDate(date)
+    setNewEmployee({ ...newEmployee, startDate: date })
   }
 
   const handleChangeSelect = (value) => {
@@ -87,11 +98,9 @@ function Form() {
 
   // On change
   const handleChange = (e) => {
-    console.log(e.target)
+    // console.log(e.target)
     setNewEmployee({ ...newEmployee, [e.target.id]: e.target.value.trim() })
   }
-  console.log(newEmployee)
-
   // Get data from local storage
   let employeesList =
     JSON.parse(window.localStorage.getItem('employeesList')) && employeeList
@@ -101,18 +110,19 @@ function Form() {
     e.preventDefault()
 
     // update data
-    newEmployee.formattedDate = newEmployee.formattedDate.replace(/-/g, '/')
     employeesList.push(newEmployee)
-    console.log(employeesList)
-    // complete / correct data
 
-    newEmployee.startDate = newEmployee.startDate.replace(/-/g, '/')
+    console.log(newEmployee)
+    console.log(employeesList)
+
+    // complete / correct data
+    newEmployee.id = employeesList.length
 
     // store data
     window.localStorage.setItem('employeesList', JSON.stringify(employeesList))
 
     // reset form
-    // setNewEmployee({ ...newEmployee }, e.target.reset())
+    setNewEmployee({ ...newEmployee }, e.target.reset())
 
     // Open modal
     toggle()
@@ -133,10 +143,9 @@ function Form() {
           value={newEmployee[data]}
           handleChange={handleChange}
           startDate={startDate}
+          birthday={birthday}
           handleChangeDatepickerStartDate={handleChangeDatepickerStartDate}
           handleChangeDatepickerBirthDay={handleChangeDatepickerBirthDay}
-          birthday={birthday}
-          dateFormat={'dd/MM/YY'}
           autoComplete="off"
         />
       ))}
@@ -173,11 +182,12 @@ function Form() {
         modal={isOpen}
         close={toggle}
         x={close}
-        icon={IconAdd}
-        title="Confirmation added"
-        msgL1="New collaborator added"
+        icon={confirme}
+        title="Confirmation"
+        msgL1="New collaborator"
         msgL2="Successfully registered"
         btn1="Add an employee"
+        hideBtn2={true}
         btn2="Employees List"
         redirectTo={goTo}
         autofocus
