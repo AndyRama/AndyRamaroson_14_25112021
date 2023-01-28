@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import IconAdd from '../Icons/IconAdd'
+import IconAddForm from '../Icons/IconAddForm'
 import employeeList from '../../data/mockData.json'
 import inputData from '../../data/inputData.json'
 import dropDownData from '../../data/dropDownData.json'
@@ -130,7 +130,7 @@ function Form() {
 
   return (
     <form action="" className="form-newEmployee" onSubmit={handleSubmit}>
-      <IconAdd id="addUser" alt="Health Wealth add user" />
+      <IconAddForm id="addUser" alt="Health Wealth add user" />
 
       {inputData.map((data, index) => (
         <Input
@@ -187,9 +187,9 @@ function Form() {
         msgL1="New collaborator"
         msgL2="Successfully registered"
         btn1="Add an employee"
-        hideBtn2={true}
+        showSpinner={true}
         btn2="Employees List"
-        redirectTo={goTo}
+        redirect={goTo}
         autofocus
       />
     </form>
