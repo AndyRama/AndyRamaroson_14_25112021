@@ -3,7 +3,8 @@ import IconAddForm from '../Icons/IconAddForm'
 import employeeList from '../../data/mockData.json'
 import inputData from '../../data/inputData.json'
 import dropDownData from '../../data/dropDownData.json'
-// import moment from 'moment'
+import moment from 'moment'
+import { parseISO } from 'date-fns'
 
 import Input from '../Input/Input'
 import Dropdown from '../DropDown/DropDown'
@@ -64,12 +65,6 @@ function Form() {
     redirectTo('employees')
   }
 
-  // const handleChangeDatepickerBirthDay = (date) => {
-  //   const age = moment(date).format('DD-MM-YY').replace(/-/g, '/')
-  //   setBirthday(age)
-  //   setNewEmployee({ ...newEmployee, dateOfBirth: age })
-  // }
-
   // const handleChangeDatepickerStartDate = (date) => {
   //   const begin = moment(date).format('DD-MM-YY').replace(/-/g, '/')
   //   setStartDate(begin)
@@ -77,13 +72,20 @@ function Form() {
   // }
 
   const handleChangeDatepickerBirthDay = (date) => {
-    setBirthday(date)
-    setNewEmployee({ ...newEmployee, dateOfBirth: date })
+    console.log(date)
+    // const age = parseISO(date)
+    // const age = moment(date).format('DD-MM-YY').replace(/-/g, '/')
+    // console.log(age)
+    const test = Date.parseISO(date)
+    console.log(test)
+    setBirthday(test)
+    setNewEmployee({ ...newEmployee, dateOfBirth: test })
   }
 
   const handleChangeDatepickerStartDate = (date) => {
-    setStartDate(date)
-    setNewEmployee({ ...newEmployee, startDate: date })
+    const begin = Date.parseISO(date)
+    setStartDate(begin)
+    setNewEmployee({ ...newEmployee, startDate: begin })
   }
 
   const handleChangeSelect = (value) => {
@@ -187,7 +189,7 @@ function Form() {
         msgL1="New collaborator"
         msgL2="Successfully registered"
         btn1="Add an employee"
-        showSpinner={true}
+        // showSpinner={true}
         btn2="Employees List"
         redirect={goTo}
         autofocus

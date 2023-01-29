@@ -3,6 +3,12 @@ import Navbar from './Navbar/Navbar'
 import Home from '../pages/Home/Home'
 import Employees from '../pages/Employees/Employees.jsx'
 
+/**
+ * Layout
+ * Handling web app routes
+ * @returns routes
+ */
+
 function Layout() {
   return (
     <>

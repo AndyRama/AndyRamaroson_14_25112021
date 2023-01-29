@@ -11,6 +11,11 @@ import {
   usePagination,
 } from 'react-table'
 
+/**
+ * Table
+ * @returns {Reactnode}  jsx injected in DOM
+ */
+
 function Table() {
   // Get data
   let employeesList =

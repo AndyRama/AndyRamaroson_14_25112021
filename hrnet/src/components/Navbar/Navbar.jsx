@@ -7,6 +7,11 @@ import IconLogoDesign from '../Icons/IconLogoDesign'
 
 import './Navbar.scss'
 
+/**
+ * Navbar
+ * @returns {Reactnode}  jsx injected in DOM
+ */
+
 function Navbar() {
   const path = useLocation().pathname
   return (
