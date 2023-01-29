@@ -3,8 +3,8 @@ import IconAddForm from '../Icons/IconAddForm'
 import employeeList from '../../data/mockData.json'
 import inputData from '../../data/inputData.json'
 import dropDownData from '../../data/dropDownData.json'
-import moment from 'moment'
-import { parseISO } from 'date-fns'
+// import moment from 'moment'
+// import { parseISO } from 'date-fns'
 
 import Input from '../Input/Input'
 import Dropdown from '../DropDown/DropDown'
@@ -24,15 +24,27 @@ import './Form.scss'
 
 function Form() {
   const state = [
-    { value: 'France', label: 'France' },
-    { value: 'Californie', label: 'Californie' },
-    { value: 'Madagascar', label: 'Madagascar' },
+    { value: 'Alabama', label: 'Alabama', abbrev: 'AL' },
+    { value: 'Alaska', label: 'Alaska', abbrev: 'AK' },
+    { value: 'Arizona', label: 'Arizona', abbrev: 'AZ' },
+    { value: 'Arkansas', label: 'Arkansas', abbrev: 'AR' },
+    { value: 'California', label: 'California', abbrev: 'CA' },
+    { value: 'Colorado', label: 'Colorado', abbrev: 'CO' },
+    { value: 'Connecticut', label: 'Connecticut', abbrev: 'CT' },
+    { value: 'Delaware', label: 'Delaware', abbrev: 'DE' },
+    {
+      value: 'District Of Columbia',
+      label: 'District Of Columbia',
+      abbrev: 'DC',
+    },
   ]
 
   const department = [
-    { value: 'Research and Development', label: 'Research and Development' },
+    { value: 'Sales', label: 'Sales' },
+    { value: 'Marketing', label: 'Marketing' },
     { value: 'Engineering', label: 'Engineering' },
-    { value: 'Support', label: 'Support' },
+    { value: 'Human Ressources', label: 'Human Ressources' },
+    { value: 'Legal', label: 'Legal' },
   ]
 
   // Form module settings
@@ -65,25 +77,20 @@ function Form() {
     redirectTo('employees')
   }
 
-  // const handleChangeDatepickerStartDate = (date) => {
-  //   const begin = moment(date).format('DD-MM-YY').replace(/-/g, '/')
-  //   setStartDate(begin)
-  //   setNewEmployee({ ...newEmployee, startDate: begin })
-  // }
-
   const handleChangeDatepickerBirthDay = (date) => {
-    console.log(date)
-    // const age = parseISO(date)
     // const age = moment(date).format('DD-MM-YY').replace(/-/g, '/')
+    const age = Date.parse(date)
+    // console.log(date)
     // console.log(age)
-    const test = Date.parseISO(date)
-    console.log(test)
-    setBirthday(test)
-    setNewEmployee({ ...newEmployee, dateOfBirth: test })
+    setBirthday(age)
+    setNewEmployee({ ...newEmployee, dateOfBirth: age })
   }
 
   const handleChangeDatepickerStartDate = (date) => {
-    const begin = Date.parseISO(date)
+    // const begin = moment(date).format('DD-MM-YY').replace(/-/g, '/')
+    const begin = Date.parse(date)
+    // console.log(date)
+    // console.log(begin)
     setStartDate(begin)
     setNewEmployee({ ...newEmployee, startDate: begin })
   }
@@ -189,9 +196,10 @@ function Form() {
         msgL1="New collaborator"
         msgL2="Successfully registered"
         btn1="Add an employee"
-        // showSpinner={true}
         btn2="Employees List"
         redirect={goTo}
+        // hideBtn1={true}
+        // hideIcon={true}
         autofocus
       />
     </form>
