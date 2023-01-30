@@ -20,6 +20,10 @@ function Input({
         <DatePicker
           selected={startDate}
           onChange={(date: Date) => handleChangeDatepickerStartDate(date)}
+          peekNextMonth
+          showMonthDropdown
+          showYearDropdown
+          dropdownMode="select"
         />
       )}
 
@@ -27,6 +31,10 @@ function Input({
         <DatePicker
           selected={birthday}
           onChange={(date: Date) => handleChangeDatepickerBirthDay(date)}
+          peekNextMonth
+          showMonthDropdown
+          showYearDropdown
+          dropdownMode="select"
         />
       )}
 

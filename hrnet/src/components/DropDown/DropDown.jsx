@@ -22,6 +22,7 @@ function Dropdown({
           aria-required="true"
           required
           id={id}
+          isClearable
         />
       ) : (
         <select
@@ -30,6 +31,7 @@ function Dropdown({
           aria-required="true"
           required
           id={id}
+          isClearable
         >
           {select.map((item) => (
             <option

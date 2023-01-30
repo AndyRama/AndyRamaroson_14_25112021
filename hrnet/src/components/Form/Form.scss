@@ -150,3 +150,15 @@ select {
   color: var(--tertiary);
   cursor: not-allowed;
 }
+
+.react-datepicker__current-month {
+  display: none;
+}
+
+.react-datepicker__navigation-icon--previous {
+  display: none;
+}
+
+.react-datepicker__navigation-icon--next {
+  display: none;
+}

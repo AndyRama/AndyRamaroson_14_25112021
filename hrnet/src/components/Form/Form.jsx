@@ -4,7 +4,6 @@ import employeeList from '../../data/mockData.json'
 import inputData from '../../data/inputData.json'
 import dropDownData from '../../data/dropDownData.json'
 // import moment from 'moment'
-// import { parseISO } from 'date-fns'
 
 import Input from '../Input/Input'
 import Dropdown from '../DropDown/DropDown'
@@ -80,8 +79,8 @@ function Form() {
   const handleChangeDatepickerBirthDay = (date) => {
     // const age = moment(date).format('DD-MM-YY').replace(/-/g, '/')
     const age = Date.parse(date)
-    // console.log(date)
-    // console.log(age)
+    console.log(date)
+    console.log(age)
     setBirthday(age)
     setNewEmployee({ ...newEmployee, dateOfBirth: age })
   }
@@ -89,8 +88,8 @@ function Form() {
   const handleChangeDatepickerStartDate = (date) => {
     // const begin = moment(date).format('DD-MM-YY').replace(/-/g, '/')
     const begin = Date.parse(date)
-    // console.log(date)
-    // console.log(begin)
+    console.log(date)
+    console.log(begin)
     setStartDate(begin)
     setNewEmployee({ ...newEmployee, startDate: begin })
   }
