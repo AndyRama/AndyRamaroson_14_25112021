@@ -13,7 +13,7 @@ Utilisation en interne d'une application de gestion RH représentant 90% de la d
 - Convertir l'application HRnet (code source 100% JQuery) en une application React
 - Convertir les plugins sources : 
   - sélecteur de date
-  - fenêtre modale | [andyrama-modal](https://www.npmjs.com/package/andyrama-modal) (version 0.1.1)
+  - fenêtre modale | [andyrama-modal](https://www.npmjs.com/package/andyrama-modal) (version 0.1.4)
   - menus déroulants
   - tables de données
 - Comparer de performances entre l'ancienne et la nouvelle version
@@ -46,19 +46,18 @@ Utilisation en interne d'une application de gestion RH représentant 90% de la d
 ### Prérequis
 
 * [Git](https://git-scm.com/) pour cloner les repos
-* [nodeJS](https://nodejs.org/fr/) (version 17.3.0) pour exécuter les commandes
+* [nodeJS](https://nodejs.org/fr/) (version 16.10.0) 
 * [npm](https://www.npmjs.com/) (version 8.3.0) pour lancer l'application
 
 ### Dépendances
 
-*  [react](https://fr.reactjs.org/docs/getting-started.html) (version 18.2.0)
-*  [react-router-dom](https://reactrouter.com/web/guides/quick-start) (version 6.6.1)
+*  [react](https://fr.reactjs.org/docs/getting-started.html)                  (version 18.2.0)
+*  [react-router-dom](https://reactrouter.com/web/guides/quick-start)         (version 6.6.1)
 *  [prop-types](https://fr.reactjs.org/docs/typechecking-with-proptypes.html) (version 15.8.0)
-*  [react-datepicker](https://reactdatepicker.com/) (version 4.8.0)
-*  [date-fns](https://date-fns.org/docs/Getting-Started) (version 2.27.0)
-*  [react-select](https://react-select.com/home#getting-started) (version 5.7.0)
-*  [react-table](https://react-table.tanstack.com/docs/installation) (version 7.8.0)
-*  [andyrama-modal](https://www.npmjs.com/package/andyrama-modal) (version 0.1.1)
+*  [react-datepicker](https://reactdatepicker.com/)                           (version 4.9.0)
+*  [react-select](https://react-select.com/home#getting-started)              (version 5.7.0)
+*  [react-table](https://react-table.tanstack.com/docs/installation)          (version 8.7.8)
+*  [andyrama-modal](https://www.npmjs.com/package/andyrama-modal)             (version 0.1.4)
 
 ### Lancement du front-end
 
@@ -81,19 +80,18 @@ ___
 ### Prerequisites
 
 * [Git](https://git-scm.com/) to clone repositories
-* [nodeJS](https://nodejs.org/fr/) to run commands
+* [nodeJS](https://nodejs.org/fr/)(version 16.10.0) to run commands
 * [npm](https://www.npmjs.com/) to run application
 
 ### Dependances
 
-*  [react](https://fr.reactjs.org/docs/getting-started.html) (version 18.2.0)
-*  [react-router-dom](https://reactrouter.com/web/guides/quick-start) (version 6.6.1)
+*  [react](https://fr.reactjs.org/docs/getting-started.html)                  (version 18.2.0)
+*  [react-router-dom](https://reactrouter.com/web/guides/quick-start)         (version 6.6.1)
 *  [prop-types](https://fr.reactjs.org/docs/typechecking-with-proptypes.html) (version 15.8.0)
-*  [react-datepicker](https://reactdatepicker.com/) (version 4.8.0)
-*  [date-fns](https://date-fns.org/docs/Getting-Started) (version 2.27.0)
-*  [react-select](https://react-select.com/home#getting-started) (version 5.7.0)
-*  [react-table](https://react-table.tanstack.com/docs/installation) (version 7.8.0)
-*  [andyrama-modal](https://www.npmjs.com/package/andyrama-modal) (version 0.1.1)
+*  [react-datepicker](https://reactdatepicker.com/)                           (version 4.9.0)
+*  [react-select](https://react-select.com/home#getting-started)              (version 5.7.0)
+*  [react-table](https://react-table.tanstack.com/docs/installation)          (version 8.7.8)
+*  [andyrama-modal](https://www.npmjs.com/package/andyrama-modal)             (version 0.1.4)
 
 ### Installing and launching front-end
 
