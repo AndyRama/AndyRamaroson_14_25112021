@@ -3,7 +3,7 @@ import IconAddForm from '../Icons/IconAddForm'
 import employeeList from '../../data/mockData.json'
 import inputData from '../../data/inputData.json'
 import dropDownData from '../../data/dropDownData.json'
-// import moment from 'moment'
+import moment from 'moment'
 
 import Input from '../Input/Input'
 import Dropdown from '../DropDown/DropDown'
@@ -77,19 +77,13 @@ function Form() {
   }
 
   const handleChangeDatepickerBirthDay = (date) => {
-    // const age = moment(date).format('DD-MM-YY').replace(/-/g, '/')
     const age = Date.parse(date)
-    console.log(date)
-    console.log(age)
     setBirthday(age)
     setNewEmployee({ ...newEmployee, dateOfBirth: age })
   }
 
   const handleChangeDatepickerStartDate = (date) => {
-    // const begin = moment(date).format('DD-MM-YY').replace(/-/g, '/')
     const begin = Date.parse(date)
-    console.log(date)
-    console.log(begin)
     setStartDate(begin)
     setNewEmployee({ ...newEmployee, startDate: begin })
   }
@@ -106,12 +100,12 @@ function Form() {
 
   // On change
   const handleChange = (e) => {
-    // console.log(e.target)
     setNewEmployee({ ...newEmployee, [e.target.id]: e.target.value.trim() })
   }
+
   // Get data from local storage
   let employeesList =
-    JSON.parse(window.localStorage.getItem('employeesList')) && employeeList
+    JSON.parse(window.localStorage.getItem('employeesList')) || []
 
   // On submit
   const handleSubmit = (e) => {
@@ -124,7 +118,7 @@ function Form() {
     console.log(employeesList)
 
     // complete / correct data
-    newEmployee.id = employeesList.length
+    newEmployee.id = employeesList.length + employeeList.length + 1
 
     // store data
     window.localStorage.setItem('employeesList', JSON.stringify(employeesList))
@@ -155,6 +149,7 @@ function Form() {
           handleChangeDatepickerStartDate={handleChangeDatepickerStartDate}
           handleChangeDatepickerBirthDay={handleChangeDatepickerBirthDay}
           autoComplete="off"
+          dateFormat="dd-mm-yy"
         />
       ))}
 
@@ -197,9 +192,6 @@ function Form() {
         btn1="Add an employee"
         btn2="Employees List"
         redirect={goTo}
-        // hideBtn1={true}
-        // hideIcon={true}
-
         autofocus
       />
     </form>

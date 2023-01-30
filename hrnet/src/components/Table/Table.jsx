@@ -18,13 +18,15 @@ import {
 
 function Table() {
   // Get data
-  let employeesList =
-    JSON.parse(window.localStorage.getItem('employeeList')) || employeeList
+  let employeesList = [
+    ...employeeList,
+    ...JSON.parse(localStorage.getItem('employeesList')),
+  ]
   console.log(employeesList)
 
   // useMemo hook to avoid re-rendering until the data changes
   const columns = useMemo(() => TableColumns, [])
-  const data = useMemo(() => employeeList, [])
+  const data = useMemo(() => employeesList, [])
 
   //Table instance
   const tableInstance = useTable(
