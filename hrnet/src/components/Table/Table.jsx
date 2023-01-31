@@ -17,11 +17,13 @@ import {
  */
 
 function Table() {
-  // Get data
-  let employeesList = [
-    ...employeeList,
-    ...JSON.parse(localStorage.getItem('employeesList')),
-  ]
+  if (localStorage.getItem('employeesList') === null) {
+    localStorage.setItem('employeesList', JSON.stringify(employeeList))
+  }
+  // console.log(localStorage.getItem('employeesList'))
+
+  let employeesList = JSON.parse(localStorage.getItem('employeesList'))
+
   console.log(employeesList)
 
   // useMemo hook to avoid re-rendering until the data changes

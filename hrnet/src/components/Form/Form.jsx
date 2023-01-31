@@ -3,6 +3,8 @@ import IconAddForm from '../Icons/IconAddForm'
 import employeeList from '../../data/mockData.json'
 import inputData from '../../data/inputData.json'
 import dropDownData from '../../data/dropDownData.json'
+import { formatRelative } from 'date-fns'
+import { fr } from 'date-fns/locale'
 
 import Input from '../Input/Input'
 import Dropdown from '../DropDown/DropDown'
@@ -14,6 +16,7 @@ import close from '../../asset/ico-close.svg'
 import confirme from '../../asset/ico-user-confirm.svg'
 
 import './Form.scss'
+import { parseISO } from 'date-fns/esm'
 
 /**
  * Form
@@ -83,6 +86,7 @@ function Form() {
 
   const handleChangeDatepickerStartDate = (date) => {
     setStartDate(date)
+    console.log(date)
     setNewEmployee({ ...newEmployee, startDate: date })
   }
 
