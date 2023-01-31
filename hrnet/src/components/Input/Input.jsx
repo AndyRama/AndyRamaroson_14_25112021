@@ -24,6 +24,7 @@ function Input({
           showMonthDropdown
           showYearDropdown
           dropdownMode="select"
+          format="yyyy-MM-dd"
         />
       )}
 
@@ -35,6 +36,7 @@ function Input({
           showMonthDropdown
           showYearDropdown
           dropdownMode="select"
+          format="yyyy-MM-dd"
         />
       )}
 

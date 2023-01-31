@@ -3,7 +3,6 @@ import IconAddForm from '../Icons/IconAddForm'
 import employeeList from '../../data/mockData.json'
 import inputData from '../../data/inputData.json'
 import dropDownData from '../../data/dropDownData.json'
-import moment from 'moment'
 
 import Input from '../Input/Input'
 import Dropdown from '../DropDown/DropDown'
@@ -36,6 +35,7 @@ function Form() {
       label: 'District Of Columbia',
       abbrev: 'DC',
     },
+    { value: 'France', label: 'france', abbrev: 'FR' },
   ]
 
   const department = [
@@ -77,15 +77,13 @@ function Form() {
   }
 
   const handleChangeDatepickerBirthDay = (date) => {
-    const age = Date.parse(date)
-    setBirthday(age)
-    setNewEmployee({ ...newEmployee, dateOfBirth: age })
+    setBirthday(date)
+    setNewEmployee({ ...newEmployee, dateOfBirth: date })
   }
 
   const handleChangeDatepickerStartDate = (date) => {
-    const begin = Date.parse(date)
-    setStartDate(begin)
-    setNewEmployee({ ...newEmployee, startDate: begin })
+    setStartDate(date)
+    setNewEmployee({ ...newEmployee, startDate: date })
   }
 
   const handleChangeSelect = (value) => {
@@ -104,8 +102,9 @@ function Form() {
   }
 
   // Get data from local storage
-  let employeesList =
-    JSON.parse(window.localStorage.getItem('employeesList')) || []
+  let employeesList = JSON.parse(
+    window.localStorage.getItem('employeesList')
+  ) || [employeeList]
 
   // On submit
   const handleSubmit = (e) => {
