@@ -20,7 +20,6 @@ function Table() {
   if (localStorage.getItem('employeesList') === null) {
     localStorage.setItem('employeesList', JSON.stringify(employeeList))
   }
-  // console.log(localStorage.getItem('employeesList'))
 
   let employeesList = JSON.parse(localStorage.getItem('employeesList'))
 
@@ -28,7 +27,6 @@ function Table() {
 
   // useMemo hook to avoid re-rendering until the data changes
   const columns = useMemo(() => TableColumns, [])
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   const data = useMemo(() => employeesList, [])
 
   //Table instance

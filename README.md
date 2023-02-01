@@ -13,7 +13,7 @@ Utilisation en interne d'une application de gestion RH représentant 90% de la d
 - Convertir l'application HRnet (code source 100% JQuery) en une application React
 - Convertir les plugins sources : 
   - sélecteur de date
-  - fenêtre modale | [andyrama-modal](https://www.npmjs.com/package/andyrama-modal) (version 0.1.4)
+  - fenêtre modale | [andyrama-modal](https://www.npmjs.com/package/andyrama-modal) (version 0.1.8)
   - menus déroulants
   - tables de données
 - Comparer de performances entre l'ancienne et la nouvelle version
@@ -51,13 +51,13 @@ Utilisation en interne d'une application de gestion RH représentant 90% de la d
 
 ### Dépendances
 
-*  [react](https://fr.reactjs.org/docs/getting-started.html)                  (version 18.2.0)
-*  [react-router-dom](https://reactrouter.com/web/guides/quick-start)         (version 6.6.1)
-*  [prop-types](https://fr.reactjs.org/docs/typechecking-with-proptypes.html) (version 15.8.0)
-*  [react-datepicker](https://reactdatepicker.com/)                           (version 4.9.0)
-*  [react-select](https://react-select.com/home#getting-started)              (version 5.7.0)
-*  [react-table](https://react-table.tanstack.com/docs/installation)          (version 8.7.8)
-*  [andyrama-modal](https://www.npmjs.com/package/andyrama-modal)             (version 0.1.4)
+*  [react](https://fr.reactjs.org/docs/getting-started.html)                     (version 18.2.0)
+*  [react-router-dom](https://reactrouter.com/web/guides/quick-start)            (version 6.6.1)
+*  [prop-types](https://fr.reactjs.org/docs/typechecking-with-proptypes.html)    (version 15.8.0)
+*  [react-datepicker](https://reactdatepicker.com/)                              (version 4.9.0)
+*  [react-select](https://react-select.com/home#getting-started)                 (version 5.7.0)
+*  [react-table](https://react-table-v7.tanstack.com/docs/examples/editable-data)(version 8.7.8)
+*  [andyrama-modal](https://www.npmjs.com/package/andyrama-modal)                (version 0.1.8)
 
 ### Lancement du front-end
 
@@ -85,13 +85,13 @@ ___
 
 ### Dependances
 
-*  [react](https://fr.reactjs.org/docs/getting-started.html)                  (version 18.2.0)
-*  [react-router-dom](https://reactrouter.com/web/guides/quick-start)         (version 6.6.1)
-*  [prop-types](https://fr.reactjs.org/docs/typechecking-with-proptypes.html) (version 15.8.0)
-*  [react-datepicker](https://reactdatepicker.com/)                           (version 4.9.0)
-*  [react-select](https://react-select.com/home#getting-started)              (version 5.7.0)
-*  [react-table](https://react-table.tanstack.com/docs/installation)          (version 8.7.8)
-*  [andyrama-modal](https://www.npmjs.com/package/andyrama-modal)             (version 0.1.4)
+*  [react](https://fr.reactjs.org/docs/getting-started.html)                     (version 18.2.0)
+*  [react-router-dom](https://reactrouter.com/web/guides/quick-start)            (version 6.6.1)
+*  [prop-types](https://fr.reactjs.org/docs/typechecking-with-proptypes.html)    (version 15.8.0)
+*  [react-datepicker](https://reactdatepicker.com/)                              (version 4.9.0)
+*  [react-select](https://react-select.com/home#getting-started)                 (version 5.7.0)
+*  [react-table](https://react-table-v7.tanstack.com/docs/examples/editable-data)(version 8.7.8)
+*  [andyrama-modal](https://www.npmjs.com/package/andyrama-modal)                (version 0.1.8)
 
 ### Installing and launching front-end
 

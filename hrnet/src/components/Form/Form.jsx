@@ -58,6 +58,8 @@ function Form() {
   const [newEmployee, setNewEmployee] = useState(initialState)
   const [startDate, setStartDate] = useState(new Date())
   const [birthday, setBirthday] = useState(new Date())
+  // const [placeBirth, setPlaceBirth] = useState('')
+  // const [placeStart, setPlaceStart] = useState('')
 
   //Modal module settings
   const { isOpen, toggle, escToClose } = useModal()
@@ -75,6 +77,7 @@ function Form() {
   const handleChangeDatepickerBirthDay = (date) => {
     const age = moment(date).format('DD-MM-YY').replace(/-/g, '/')
     setBirthday(age.parseIsoDate)
+
     console.log(age)
     setNewEmployee({ ...newEmployee, dateOfBirth: age })
   }
@@ -83,7 +86,6 @@ function Form() {
     const startDate = moment(date).format('DD-MM-YY').replace(/-/g, '/')
     setStartDate(startDate.parseIsoDate)
     console.log(startDate)
-
     setNewEmployee({ ...newEmployee, startDate: startDate })
   }
 
@@ -113,9 +115,10 @@ function Form() {
 
     // update data
     employeesList.push(newEmployee)
+    console.log(employeesList)
 
     // complete / correct data
-    newEmployee.id = employeesList.length + employeeList.length + 1
+    newEmployee.id = employeesList.length
 
     // store data
     window.localStorage.setItem('employeesList', JSON.stringify(employeesList))
@@ -188,8 +191,8 @@ function Form() {
         btn1="Add an employee"
         btn2="Employees List"
         redirect={goTo}
-        animationClass={'animationClass'}
-        hideFooter={true}
+        // animationClass={'animationClass'}
+        // hideFooter={true}
         // hideheader={true}
         // hideMsgL2={true}
         // hideIcon={true}
