@@ -28,6 +28,7 @@ function Table() {
 
   // useMemo hook to avoid re-rendering until the data changes
   const columns = useMemo(() => TableColumns, [])
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const data = useMemo(() => employeesList, [])
 
   //Table instance

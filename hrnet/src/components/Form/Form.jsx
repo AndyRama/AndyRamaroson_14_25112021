@@ -3,8 +3,7 @@ import IconAddForm from '../Icons/IconAddForm'
 import employeeList from '../../data/mockData.json'
 import inputData from '../../data/inputData.json'
 import dropDownData from '../../data/dropDownData.json'
-import { formatRelative } from 'date-fns'
-import { fr } from 'date-fns/locale'
+import moment from 'moment'
 
 import Input from '../Input/Input'
 import Dropdown from '../DropDown/DropDown'
@@ -16,7 +15,6 @@ import close from '../../asset/ico-close.svg'
 import confirme from '../../asset/ico-user-confirm.svg'
 
 import './Form.scss'
-import { parseISO } from 'date-fns/esm'
 
 /**
  * Form
@@ -25,20 +23,15 @@ import { parseISO } from 'date-fns/esm'
 
 function Form() {
   const state = [
-    { value: 'Alabama', label: 'Alabama', abbrev: 'AL' },
-    { value: 'Alaska', label: 'Alaska', abbrev: 'AK' },
-    { value: 'Arizona', label: 'Arizona', abbrev: 'AZ' },
-    { value: 'Arkansas', label: 'Arkansas', abbrev: 'AR' },
-    { value: 'California', label: 'California', abbrev: 'CA' },
-    { value: 'Colorado', label: 'Colorado', abbrev: 'CO' },
-    { value: 'Connecticut', label: 'Connecticut', abbrev: 'CT' },
-    { value: 'Delaware', label: 'Delaware', abbrev: 'DE' },
-    {
-      value: 'District Of Columbia',
-      label: 'District Of Columbia',
-      abbrev: 'DC',
-    },
-    { value: 'France', label: 'france', abbrev: 'FR' },
+    { value: 'AL', label: 'Alabama', abbrev: 'AL' },
+    { value: 'AK', label: 'Alaska', abbrev: 'AK' },
+    { value: 'AZ', label: 'Arizona', abbrev: 'AZ' },
+    { value: 'AR', label: 'Arkansas', abbrev: 'AR' },
+    { value: 'CA', label: 'California', abbrev: 'CA' },
+    { value: 'CO', label: 'Colorado', abbrev: 'CO' },
+    { value: 'CT', label: 'Connecticut', abbrev: 'CT' },
+    { value: 'DE', label: 'Delaware', abbrev: 'DE' },
+    { value: 'FR', label: 'France', abbrev: 'FR' },
   ]
 
   const department = [
@@ -80,14 +73,18 @@ function Form() {
   }
 
   const handleChangeDatepickerBirthDay = (date) => {
-    setBirthday(date)
-    setNewEmployee({ ...newEmployee, dateOfBirth: date })
+    const age = moment(date).format('DD-MM-YY').replace(/-/g, '/')
+    setBirthday(age.parseIsoDate)
+    console.log(age)
+    setNewEmployee({ ...newEmployee, dateOfBirth: age })
   }
 
   const handleChangeDatepickerStartDate = (date) => {
-    setStartDate(date)
-    console.log(date)
-    setNewEmployee({ ...newEmployee, startDate: date })
+    const startDate = moment(date).format('DD-MM-YY').replace(/-/g, '/')
+    setStartDate(startDate.parseIsoDate)
+    console.log(startDate)
+
+    setNewEmployee({ ...newEmployee, startDate: startDate })
   }
 
   const handleChangeSelect = (value) => {
@@ -116,9 +113,6 @@ function Form() {
 
     // update data
     employeesList.push(newEmployee)
-
-    console.log(newEmployee)
-    console.log(employeesList)
 
     // complete / correct data
     newEmployee.id = employeesList.length + employeeList.length + 1
@@ -152,7 +146,6 @@ function Form() {
           handleChangeDatepickerStartDate={handleChangeDatepickerStartDate}
           handleChangeDatepickerBirthDay={handleChangeDatepickerBirthDay}
           autoComplete="off"
-          dateFormat="dd-mm-yy"
         />
       ))}
 
@@ -195,6 +188,11 @@ function Form() {
         btn1="Add an employee"
         btn2="Employees List"
         redirect={goTo}
+        animationClass={'animationClass'}
+        hideFooter={true}
+        // hideheader={true}
+        // hideMsgL2={true}
+        // hideIcon={true}
         autofocus
       />
     </form>

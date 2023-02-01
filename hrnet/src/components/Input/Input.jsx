@@ -24,10 +24,9 @@ function Input({
           showMonthDropdown
           showYearDropdown
           dropdownMode="select"
-          format="yyyy-MM-dd"
+          placeholderText="startDate selected"
         />
       )}
-
       {id === 'dateOfBirth' && (
         <DatePicker
           selected={birthday}
@@ -36,10 +35,9 @@ function Input({
           showMonthDropdown
           showYearDropdown
           dropdownMode="select"
-          format="yyyy-MM-dd"
+          placeholderText="birthday selected"
         />
       )}
-
       {type !== 'date' && (
         <input
           type={type}
