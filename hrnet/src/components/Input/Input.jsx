@@ -12,8 +12,6 @@ function Input({
   handleChangeDatepickerStartDate,
   handleChangeDatepickerBirthDay,
   birthday,
-  // placeBirth,
-  placeStart,
 }) {
   return (
     <div className={`form-newEmployee--inputWrapper ${className}`}>
@@ -26,7 +24,7 @@ function Input({
           showMonthDropdown
           showYearDropdown
           dropdownMode="select"
-          placeholderText={`${placeStart}`}
+          placeholderText="Starting date ✔️"
         />
       )}
       {id === 'dateOfBirth' && (
@@ -37,7 +35,7 @@ function Input({
           showMonthDropdown
           showYearDropdown
           dropdownMode="select"
-          // placeholderText={`${placeBirth}`}
+          placeholderText="Birthday ✔️"
         />
       )}
       {type !== 'date' && (
