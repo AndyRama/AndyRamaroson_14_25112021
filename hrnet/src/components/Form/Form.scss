@@ -151,6 +151,7 @@ select {
   cursor: not-allowed;
 }
 
+// Date picker style
 .react-datepicker__current-month {
   display: none;
 }
@@ -161,4 +162,11 @@ select {
 
 .react-datepicker__navigation-icon--next {
   display: none;
+}
+
+// Modal container for mobile
+.modal-container {
+  @media screen and (max-width: 400px) {
+    width: 70vw !important;
+  }
 }
