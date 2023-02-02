@@ -58,8 +58,6 @@ function Form() {
   const [newEmployee, setNewEmployee] = useState(initialState)
   const [startDate, setStartDate] = useState(new Date())
   const [birthday, setBirthday] = useState(new Date())
-  // const [placeBirth, setPlaceBirth] = useState(new Date())
-  // const [placeStart, setPlaceStart] = useState(new Date())
 
   //Modal module settings
   const { isOpen, toggle, escToClose } = useModal()
@@ -77,14 +75,12 @@ function Form() {
   const handleChangeDatepickerBirthDay = (date) => {
     const age = moment(date).format('DD-MM-YY').replace(/-/g, '/')
     setBirthday(age.parseIsoDate)
-    console.log(age)
     setNewEmployee({ ...newEmployee, dateOfBirth: age })
   }
 
   const handleChangeDatepickerStartDate = (date) => {
     const startDate = moment(date).format('DD-MM-YY').replace(/-/g, '/')
     setStartDate(startDate.parseIsoDate)
-    console.log(startDate)
     setNewEmployee({ ...newEmployee, startDate: startDate })
   }
 
@@ -190,11 +186,6 @@ function Form() {
         btn1="Add an employee"
         btn2="Employees List"
         redirect={goTo}
-        // animationClass={'animationClass'}
-        // hideFooter={true}
-        // hideHeader={true}
-        // hideMsgL2={true}
-        // hideIcon={true}
         autofocus
       />
     </form>
