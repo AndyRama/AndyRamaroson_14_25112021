@@ -15,6 +15,12 @@
   display: flex;
   width: auto;
   margin-right: 0.5rem;
+
+  @media screen and (max-width: 400px) {
+    margin-left: 40%;
+    height: 40px;
+    width: 40px;
+  }
 }
 
 #addList {
