@@ -19,9 +19,6 @@ function Dropdown({
           type="state"
           options={id === 'stateAbbrev' ? state : department}
           onChange={handleChange}
-          aria-required="true"
-          required
-          id={id}
           isClearable
         />
       ) : (

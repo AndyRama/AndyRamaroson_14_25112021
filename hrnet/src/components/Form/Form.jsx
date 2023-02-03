@@ -73,9 +73,9 @@ function Form() {
   }
 
   const handleChangeDatepickerBirthDay = (date) => {
-    const age = moment(date).format('DD-MM-YY').replace(/-/g, '/')
-    setBirthday(age.parseIsoDate)
-    setNewEmployee({ ...newEmployee, dateOfBirth: age })
+    const dateOfBirth = moment(date).format('DD-MM-YY').replace(/-/g, '/')
+    setBirthday(dateOfBirth.parseIsoDate)
+    setNewEmployee({ ...newEmployee, dateOfBirth: dateOfBirth })
   }
 
   const handleChangeDatepickerStartDate = (date) => {
@@ -110,7 +110,6 @@ function Form() {
 
     // update data
     employeesList.push(newEmployee)
-    console.log(employeesList)
 
     // complete / correct data
     newEmployee.id = employeesList.length
@@ -184,6 +183,7 @@ function Form() {
         msgL1="New collaborator"
         msgL2="Successfully registered"
         btn1="Add an employee"
+        hideBtn1={true}
         btn2="Employees List"
         redirect={goTo}
         autofocus
