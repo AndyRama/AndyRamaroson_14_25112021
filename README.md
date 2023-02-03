@@ -57,7 +57,7 @@ Utilisation en interne d'une application de gestion RH représentant 90% de la d
 *  [react-datepicker](https://reactdatepicker.com/)                              (version 4.9.0)
 *  [react-select](https://react-select.com/home#getting-started)                 (version 5.7.0)
 *  [react-table](https://react-table-v7.tanstack.com/docs/examples/editable-data)(version 8.7.8)
-*  [andyrama-modal](https://www.npmjs.com/package/andyrama-modal)                (version 0.2.0)
+*  [andyrama-modal](https://www.npmjs.com/package/andyrama-modal)                (version 0.2.2)
 
 ### Lancement du front-end
 
@@ -91,7 +91,7 @@ ___
 *  [react-datepicker](https://reactdatepicker.com/)                              (version 4.9.0)
 *  [react-select](https://react-select.com/home#getting-started)                 (version 5.7.0)
 *  [react-table](https://react-table-v7.tanstack.com/docs/examples/editable-data)(version 8.7.8)
-*  [andyrama-modal](https://www.npmjs.com/package/andyrama-modal)                (version 0.2.0)
+*  [andyrama-modal](https://www.npmjs.com/package/andyrama-modal)                (version 0.2.2)
 
 ### Installing and launching front-end
 
