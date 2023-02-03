@@ -120,6 +120,14 @@ function Form() {
     // reset form
     setNewEmployee({ ...newEmployee }, e.target.reset())
 
+    // reset dropdown
+    setNewEmployee({ ...newEmployee, stateAbbrev: '' })
+    setNewEmployee({ ...newEmployee, department: '' })
+
+    // reset datepicker
+    setStartDate(new Date())
+    setBirthday(new Date())
+
     // Open modal
     toggle()
   }
@@ -182,8 +190,8 @@ function Form() {
         title="Confirmation"
         msgL1="New collaborator"
         msgL2="Successfully registered"
-        btn1="Add an employee"
-        hideBtn1={true}
+        btn1="Add new employee"
+        // hideBtn2={true}
         btn2="Employees List"
         redirect={goTo}
         autofocus

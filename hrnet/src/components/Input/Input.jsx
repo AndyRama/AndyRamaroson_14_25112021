@@ -25,6 +25,7 @@ function Input({
           showYearDropdown
           dropdownMode="select"
           placeholderText="Starting date ✔️"
+          value={startDate}
         />
       )}
       {id === 'dateOfBirth' && (

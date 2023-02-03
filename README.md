@@ -13,7 +13,7 @@ Utilisation en interne d'une application de gestion RH représentant 90% de la d
 - Convertir l'application HRnet (code source 100% JQuery) en une application React
 - Convertir les plugins sources : 
   - sélecteur de date | [react-datepicker](https://reactdatepicker.com/)(version 4.9.0)
-  - fenêtre modale    | [andyrama-modal](https://www.npmjs.com/package/andyrama-modal)(version 0.1.8)
+  - fenêtre modale    | [andyrama-modal](https://www.npmjs.com/package/andyrama-modal)(version 0.2.2)
   - menus déroulants  | [react-select](https://react-select.com/home#getting-started)(version 5.7.0)
   - tables de données | [react-table](https://react-table-v7.tanstack.com/docs/examples/editable-data)(version 8.7.8)
 - Comparer de performances entre l'ancienne et la nouvelle version
