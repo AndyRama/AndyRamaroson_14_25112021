@@ -191,9 +191,13 @@ function Form() {
         msgL1="New collaborator"
         msgL2="Successfully registered"
         btn1="Add new employee"
-        // hideBtn2={true}
         btn2="Employees List"
         redirect={goTo}
+        // hideBtn1={true}
+        // hideFooter={true}
+        // hideBtn2={true}
+        // hideMsgL2={true}
+        // hideIcon={true}
         autofocus
       />
     </form>
